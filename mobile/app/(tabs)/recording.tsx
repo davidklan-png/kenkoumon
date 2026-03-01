@@ -2,11 +2,10 @@
  * Recording tab - Audio recording interface
  */
 
-import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Audio } from 'expo-av';
 import { useEffect, useState, useRef } from 'react';
-import * as FileSystem from 'expo-file-system';
 import { Ionicons } from '@expo/vector-icons';
 import { useSessions } from '@/contexts/SessionContext';
 import { useSettings } from '@/contexts/SettingsContext';
@@ -168,11 +167,9 @@ export default function RecordingScreen() {
 
       {/* Mascot */}
       <View style={styles.mascotContainer}>
-        <Image
-          source={require('@/assets/images/mascot.png')}
-          style={styles.mascot}
-          resizeMode="contain"
-        />
+        <View style={styles.mascotPlaceholder}>
+          <Ionicons name="mic" size={60} color="#007AFF" />
+        </View>
       </View>
 
       {/* Timer */}

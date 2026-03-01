@@ -4,11 +4,16 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
-import * as DocumentPicker from 'expo-document-picker';
-import * as FileSystem from 'expo-file-system';
+import { Platform } from 'react-native';
+
+interface User {
+  id: string;
+  email: string;
+  full_name?: string;
+}
 
 interface AuthContextType {
-  user: any | null;
+  user: User | null;
   isAuthenticated: boolean;
   isLoading: boolean;
   register: (email: string, password: string, fullName?: string) => Promise<void>;
@@ -16,28 +21,63 @@ interface AuthContextType {
   logout: () => Promise<void>;
 }
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:8000';
+const API_URL = 'http://localhost:8000';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+const isSecureStoreAvailable = Platform.OS !== 'web';
+
+// Simple in-memory storage for web
+let webToken: string | null = null;
+let webUser: User | null = null;
+
+const getToken = async (): Promise<string | null> => {
+  if (isSecureStoreAvailable) {
+    return await SecureStore.getItemAsync('authToken');
+  }
+  return webToken;
+};
+
+const setToken = async (token: string): Promise<void> => {
+  if (isSecureStoreAvailable) {
+    await SecureStore.setItemAsync('authToken', token);
+  } else {
+    webToken = token;
+  }
+};
+
+const deleteToken = async (): Promise<void> => {
+  if (isSecureStoreAvailable) {
+    await SecureStore.deleteItemAsync('authToken');
+  } else {
+    webToken = null;
+  }
+};
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<any | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     checkAuth();
   }, []);
 
   const checkAuth = async () => {
+    setIsLoading(true);
     try {
-      const token = await SecureStore.getItemAsync('authToken');
+      const token = await getToken();
       if (token) {
-        const response = await fetch(`${API_URL}/api/v1/auth/me`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        if (response.ok) {
-          const userData = await response.json();
-          setUser(userData);
+        try {
+          const response = await fetch(`${API_URL}/api/v1/auth/me`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          if (response.ok) {
+            const userData = await response.json();
+            setUser(userData);
+          }
+        } catch (err) {
+          // Backend might not be running, that's ok for dev
+          console.warn('Auth check failed (backend may not be running)', err);
         }
       }
     } catch (error) {
@@ -55,13 +95,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
 
     if (!response.ok) {
-      const error = await response.json();
+      const error = await response.json().catch(() => ({ detail: 'Registration failed' }));
       throw new Error(error.detail || 'Registration failed');
     }
 
     const data = await response.json();
-    await SecureStore.setItemAsync('authToken', data.access_token);
-    setUser(data);
+    await setToken(data.access_token);
+    setUser(data.user || { id: data.id, email: data.email, full_name: fullName });
   };
 
   const login = async (email: string, password: string) => {
@@ -76,12 +116,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     const data = await response.json();
-    await SecureStore.setItemAsync('authToken', data.access_token);
-    setUser(data);
+    await setToken(data.access_token);
+    setUser(data.user || { id: data.id, email: email });
   };
 
   const logout = async () => {
-    await SecureStore.deleteItemAsync('authToken');
+    await deleteToken();
     setUser(null);
   };
 
