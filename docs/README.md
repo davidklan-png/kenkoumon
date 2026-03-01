@@ -35,11 +35,15 @@ Before building any product, we validate the core hypothesis with a zero-infrast
 
 | Document | Description |
 |---|---|
-| [ARCHITECTURE.md](docs/ARCHITECTURE.md) | All architectural decisions and their rationale |
 | [EXPERIMENT-ZERO.md](docs/EXPERIMENT-ZERO.md) | The validation experiment protocol |
 | [VISION.md](docs/VISION.md) | 90-day, 12-month, and 5-year product roadmap |
-| [MVP-SPEC.md](docs/MVP-SPEC.md) | Post-validation MVP specification |
-| [REPORT-TEMPLATE.md](docs/REPORT-TEMPLATE.md) | The doctor briefing report structure and generation prompt |
+| [BUSINESS-MODEL.md](docs/BUSINESS-MODEL.md) | Pricing, revenue model, and growth strategy |
+| [MVP-SPEC.md](docs/MVP-SPEC.md) | Post-validation MVP specification (F1–F6) |
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md) | Technical architecture and system design |
+| [DECISIONS-LOG.md](docs/DECISIONS-LOG.md) | Numbered architectural and product decisions |
+| [DOCTOR-REPORT-SPEC.md](docs/DOCTOR-REPORT-SPEC.md) | Report structure, quality criteria, and design principles |
+| [REPORT-TEMPLATE.md](docs/REPORT-TEMPLATE.md) | LLM generation prompt for doctor briefing reports |
+| [PROCESSING-PROMPT.md](docs/PROCESSING-PROMPT.md) | Processing prompt with tuning notes |
 | [RISK-REGISTER.md](docs/RISK-REGISTER.md) | Active risks, mitigations, and kill criteria |
 
 ## Target Market (Initial)

@@ -83,22 +83,17 @@ echo "  Created M8"
 echo ""
 
 # ─────────────────────────────────────────────
-# Helper: get milestone number by title prefix
+# Milestone titles (gh issue create -m takes the title, not the number)
 # ─────────────────────────────────────────────
-get_milestone() {
-  gh api repos/$REPO/milestones --jq ".[] | select(.title | startswith(\"$1\")) | .number"
-}
+M1="M1: Experiment Zero Tooling & Execution"
+M2="M2: Expanded Validation"
+M3="M3: Repository Scaffolding"
+M4="M4: Core Pipeline — Record, Transcribe, Generate"
+M5="M5: Patient Review & Notes (F4)"
+M6="M6: Secure Sharing & Auth (F5)"
+M7="M7: Session History & Encryption (F6)"
+M8="M8: Integration, Testing & Launch"
 
-M1=$(get_milestone "M1:")
-M2=$(get_milestone "M2:")
-M3=$(get_milestone "M3:")
-M4=$(get_milestone "M4:")
-M5=$(get_milestone "M5:")
-M6=$(get_milestone "M6:")
-M7=$(get_milestone "M7:")
-M8=$(get_milestone "M8:")
-
-echo "Milestone numbers: M1=$M1 M2=$M2 M3=$M3 M4=$M4 M5=$M5 M6=$M6 M7=$M7 M8=$M8"
 echo ""
 
 # ─────────────────────────────────────────────
