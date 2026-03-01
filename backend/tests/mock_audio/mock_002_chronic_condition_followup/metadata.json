@@ -1,0 +1,140 @@
+{
+  "scenario_id": "mock_002",
+  "scenario": "chronic_condition_followup",
+  "title": "糖尿病定期検診 - Diabetes Regular Checkup",
+  "participants": {
+    "doctor": {
+      "name": "佐藤先生",
+      "specialty": "内分泌・糖尿病内科",
+      "hospital": "みらい糖尿病クリニック"
+    },
+    "patient": {
+      "name": "鈴木花子",
+      "age": 58,
+      "gender": "female"
+    }
+  },
+  "total_turns": 15,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "doctor",
+      "text": "鈴木さん、こんにちは。今日は3ヶ月ぶりの定期検診ですね。",
+      "file": "000_doctor.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 5
+    },
+    {
+      "index": 1,
+      "speaker": "patient",
+      "text": "はい、先生。お世話になります。",
+      "file": "001_patient.mp3",
+      "timestamp_start": 5,
+      "timestamp_end": 8
+    },
+    {
+      "index": 2,
+      "speaker": "doctor",
+      "text": "HbA1cの結果を見ましょう。前回は7.2%でしたが、今回は6.8%まで改善しています。素晴らしいですね。",
+      "file": "002_doctor.mp3",
+      "timestamp_start": 8,
+      "timestamp_end": 20
+    },
+    {
+      "index": 3,
+      "speaker": "patient",
+      "text": "よかった。食事制限を頑張りました。",
+      "file": "003_patient.mp3",
+      "timestamp_start": 20,
+      "timestamp_end": 24
+    },
+    {
+      "index": 4,
+      "speaker": "doctor",
+      "text": "その調子です。空腹時血糖値も110mg/dLと良好です。目標の7.0%未満に近づいています。",
+      "file": "004_doctor.mp3",
+      "timestamp_start": 24,
+      "timestamp_end": 34
+    },
+    {
+      "index": 5,
+      "speaker": "patient",
+      "text": "メトホルミンは今のままでいいですか？",
+      "file": "005_patient.mp3",
+      "timestamp_start": 34,
+      "timestamp_end": 38
+    },
+    {
+      "index": 6,
+      "speaker": "doctor",
+      "text": "はい、メトホルミン500mgを1日2回、朝夕食後のままで続けてください。",
+      "file": "006_doctor.mp3",
+      "timestamp_start": 38,
+      "timestamp_end": 46
+    },
+    {
+      "index": 7,
+      "speaker": "doctor",
+      "text": "ただ、微量アルブミン尿が少し気になります。腎臓の状態を詳しく見るため、追加検査をしましょう。",
+      "file": "007_doctor.mp3",
+      "timestamp_start": 46,
+      "timestamp_end": 56
+    },
+    {
+      "index": 8,
+      "speaker": "patient",
+      "text": "腎臓に問題があるんですか？",
+      "file": "008_patient.mp3",
+      "timestamp_start": 56,
+      "timestamp_end": 59
+    },
+    {
+      "index": 9,
+      "speaker": "doctor",
+      "text": "まだ早期の段階です。血圧のコントロールと血糖管理を続ければ、進行を防げます。",
+      "file": "009_doctor.mp3",
+      "timestamp_start": 59,
+      "timestamp_end": 68
+    },
+    {
+      "index": 10,
+      "speaker": "doctor",
+      "text": "ARB系の降圧剤、オルメサルタン10mgを追加しましょう。腎臓を保護する効果もあります。",
+      "file": "010_doctor.mp3",
+      "timestamp_start": 68,
+      "timestamp_end": 78
+    },
+    {
+      "index": 11,
+      "speaker": "patient",
+      "text": "分かりました。朝飲めばいいですか？",
+      "file": "011_patient.mp3",
+      "timestamp_start": 78,
+      "timestamp_end": 82
+    },
+    {
+      "index": 12,
+      "speaker": "doctor",
+      "text": "はい、朝1回1錠です。副作用は少ないですが、めまいや立ちくらみがあれば連絡してください。",
+      "file": "012_doctor.mp3",
+      "timestamp_start": 82,
+      "timestamp_end": 92
+    },
+    {
+      "index": 13,
+      "speaker": "doctor",
+      "text": "次回は1ヶ月後にしましょう。血液検査と尿検査を予約しておきます。",
+      "file": "013_doctor.mp3",
+      "timestamp_start": 92,
+      "timestamp_end": 100
+    },
+    {
+      "index": 14,
+      "speaker": "patient",
+      "text": "ありがとうございました。",
+      "file": "014_patient.mp3",
+      "timestamp_start": 100,
+      "timestamp_end": 103
+    }
+  ]
+}

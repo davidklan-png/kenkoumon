@@ -1,0 +1,140 @@
+{
+  "scenario_id": "mock_009",
+  "scenario": "heavy_medical_jargon",
+  "title": "専門用語多数 - Heavy Medical Terminology",
+  "participants": {
+    "doctor": {
+      "name": "循環器専門医",
+      "specialty": "循環器内科",
+      "hospital": "大学病院"
+    },
+    "patient": {
+      "name": "患者C",
+      "age": 62,
+      "gender": "male"
+    }
+  },
+  "total_turns": 15,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "doctor",
+      "text": "冠動脈CTの結果ですが、左冠動脈前下行枝に50%の狭窄が見られます。",
+      "file": "000_doctor.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 8
+    },
+    {
+      "index": 1,
+      "speaker": "patient",
+      "text": "それは...重いんですか？",
+      "file": "001_patient.mp3",
+      "timestamp_start": 8,
+      "timestamp_end": 11
+    },
+    {
+      "index": 2,
+      "speaker": "doctor",
+      "text": "中等度です。心筋虚血のリスクがあるので、負荷心電図を追加で行いましょう。",
+      "file": "002_doctor.mp3",
+      "timestamp_start": 11,
+      "timestamp_end": 20
+    },
+    {
+      "index": 3,
+      "speaker": "doctor",
+      "text": "現在、高脂血症治療中ですね。LDLコレステロールは現在いくつですか？",
+      "file": "003_doctor.mp3",
+      "timestamp_start": 20,
+      "timestamp_end": 28
+    },
+    {
+      "index": 4,
+      "speaker": "patient",
+      "text": "先月の検査では130でした。",
+      "file": "004_patient.mp3",
+      "timestamp_start": 28,
+      "timestamp_end": 31
+    },
+    {
+      "index": 5,
+      "speaker": "doctor",
+      "text": "脂質異常症の管理目標は100mg/dL未満です。スタチン系薬剤を増量しましょう。",
+      "file": "005_doctor.mp3",
+      "timestamp_start": 31,
+      "timestamp_end": 40
+    },
+    {
+      "index": 6,
+      "speaker": "doctor",
+      "text": "アトルバスタチン20mgから40mgへ。PCSK9阻害薬の追加も検討します。",
+      "file": "006_doctor.mp3",
+      "timestamp_start": 40,
+      "timestamp_end": 50
+    },
+    {
+      "index": 7,
+      "speaker": "patient",
+      "text": "副作用はありますか？",
+      "file": "007_patient.mp3",
+      "timestamp_start": 50,
+      "timestamp_end": 52
+    },
+    {
+      "index": 8,
+      "speaker": "doctor",
+      "text": "筋肉痛や肝機能障害のリスクがあります。CKとAST、ALTを定期的にモニタリングします。",
+      "file": "008_doctor.mp3",
+      "timestamp_start": 52,
+      "timestamp_end": 62
+    },
+    {
+      "index": 9,
+      "speaker": "doctor",
+      "text": "あと、耐糖能異常もありますね。HbA1cが6.5%です。糖尿病前期です。",
+      "file": "009_doctor.mp3",
+      "timestamp_start": 62,
+      "timestamp_end": 72
+    },
+    {
+      "index": 10,
+      "speaker": "doctor",
+      "text": "メトホルミン500mgを追加します。SGLT2阻害薬の適応もあるかもしれません。",
+      "file": "010_doctor.mp3",
+      "timestamp_start": 72,
+      "timestamp_end": 82
+    },
+    {
+      "index": 11,
+      "speaker": "patient",
+      "text": "薬が増えるんですね...",
+      "file": "011_patient.mp3",
+      "timestamp_start": 82,
+      "timestamp_end": 85
+    },
+    {
+      "index": 12,
+      "speaker": "doctor",
+      "text": "動脈硬化性疾患のリスクが高いので、包括的な管理が必要です。",
+      "file": "012_doctor.mp3",
+      "timestamp_start": 85,
+      "timestamp_end": 92
+    },
+    {
+      "index": 13,
+      "speaker": "doctor",
+      "text": "3ヶ月後に冠動脈造影を行い、経皮的冠動脈形成術の適応を判断しましょう。",
+      "file": "013_doctor.mp3",
+      "timestamp_start": 92,
+      "timestamp_end": 102
+    },
+    {
+      "index": 14,
+      "speaker": "patient",
+      "text": "分かりました。",
+      "file": "014_patient.mp3",
+      "timestamp_start": 102,
+      "timestamp_end": 104
+    }
+  ]
+}

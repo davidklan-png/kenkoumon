@@ -1,0 +1,78 @@
+{
+  "id": "mock_006",
+  "scenario": "emergency_short",
+  "title": "緊急短時間 - Emergency Brief Consultation",
+  "language": "ja",
+  "duration_seconds": 90,
+  "edge_case": "very_short_high_urgency",
+  "participants": {
+    "doctor": {
+      "name": "救急医",
+      "specialty": "救急医学",
+      "hospital": "救急外来"
+    },
+    "patient": {
+      "name": "患者A",
+      "age": 45,
+      "gender": "male"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "何がありましたか？",
+      "timestamp_start": 0,
+      "timestamp_end": 2
+    },
+    {
+      "speaker": "patient",
+      "text": "急に胸が痛くなって、冷や汗が出て。",
+      "timestamp_start": 2,
+      "timestamp_end": 6
+    },
+    {
+      "speaker": "doctor",
+      "text": "いつからですか？",
+      "timestamp_start": 6,
+      "timestamp_end": 7
+    },
+    {
+      "speaker": "patient",
+      "text": "30分前です。",
+      "timestamp_start": 7,
+      "timestamp_end": 9
+    },
+    {
+      "speaker": "doctor",
+      "text": "心電図とります。横になってください。",
+      "timestamp_start": 9,
+      "timestamp_end": 12
+    },
+    {
+      "speaker": "doctor",
+      "text": "アスピリン飲んでください。救急車呼びます。",
+      "timestamp_start": 12,
+      "timestamp_end": 16
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "急性胸痛・冷や汗",
+    "findings": [
+      "発症30分前",
+      "緊急性高い"
+    ],
+    "recommendations": [
+      "緊急搬送",
+      "心電図検査"
+    ],
+    "prescriptions": [
+      {
+        "name": "アスピリン",
+        "dosage": "-",
+        "frequency": "直ちに",
+        "note": "緊急投与"
+      }
+    ],
+    "follow_up": "救急搬送・循環器専門医へ"
+  }
+}

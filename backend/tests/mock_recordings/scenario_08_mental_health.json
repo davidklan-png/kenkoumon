@@ -1,0 +1,143 @@
+{
+  "id": "mock_008",
+  "scenario": "mental_health",
+  "title": "心療内科相談 - Mental Health Consultation",
+  "language": "ja",
+  "duration_seconds": 520,
+  "edge_case": "sensitive_topic_mental_health",
+  "participants": {
+    "doctor": {
+      "name": "心療内科医",
+      "specialty": "心療内科",
+      "hospital": "メンタルクリニック"
+    },
+    "patient": {
+      "name": "患者B",
+      "age": 35,
+      "gender": "female"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "今日はいかがですか？最近の調子は？",
+      "timestamp_start": 0,
+      "timestamp_end": 5
+    },
+    {
+      "speaker": "patient",
+      "text": "...最近、眠れないんです。朝起きるのも辛くて。",
+      "timestamp_start": 5,
+      "timestamp_end": 12
+    },
+    {
+      "speaker": "doctor",
+      "text": "何かきっかけはありましたか？",
+      "timestamp_start": 12,
+      "timestamp_end": 15
+    },
+    {
+      "speaker": "patient",
+      "text": "仕事が忙しくて...プレッシャーがすごくて。",
+      "timestamp_start": 15,
+      "timestamp_end": 21
+    },
+    {
+      "speaker": "doctor",
+      "text": "食欲はどうですか？",
+      "timestamp_start": 21,
+      "timestamp_end": 23
+    },
+    {
+      "speaker": "patient",
+      "text": "あんまり食べたくないです。体重も3キロ減りました。",
+      "timestamp_start": 23,
+      "timestamp_end": 29
+    },
+    {
+      "speaker": "doctor",
+      "text": "気分が落ち込むことは？",
+      "timestamp_start": 29,
+      "timestamp_end": 32
+    },
+    {
+      "speaker": "patient",
+      "text": "はい...何もしたくなくなります。時々、生きてる意味が分からなくて...。",
+      "timestamp_start": 32,
+      "timestamp_end": 42
+    },
+    {
+      "speaker": "doctor",
+      "text": "辛いですね。よく話してくれました。",
+      "timestamp_start": 42,
+      "timestamp_end": 46
+    },
+    {
+      "speaker": "doctor",
+      "text": "抗うつ薬を出します。SSRIという種類です。効果が出るまで2〜4週間かかります。",
+      "timestamp_start": 46,
+      "timestamp_end": 56
+    },
+    {
+      "speaker": "patient",
+      "text": "依存性はありますか？",
+      "timestamp_start": 56,
+      "timestamp_end": 58
+    },
+    {
+      "speaker": "doctor",
+      "text": "依存性は低いです。でも、急に止めないでください。徐々に減らします。",
+      "timestamp_start": 58,
+      "timestamp_end": 66
+    },
+    {
+      "speaker": "doctor",
+      "text": "睡眠導入剤も出します。短期間だけ使って、睡眠リズムを整えましょう。",
+      "timestamp_start": 66,
+      "timestamp_end": 74
+    },
+    {
+      "speaker": "doctor",
+      "text": "1週間後にまた来てください。もし辛くなったら、いつでも連絡してくださいね。",
+      "timestamp_start": 74,
+      "timestamp_end": 82
+    },
+    {
+      "speaker": "patient",
+      "text": "ありがとうございます。",
+      "timestamp_start": 82,
+      "timestamp_end": 85
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "不眠・気分低下・食欲不振",
+    "findings": [
+      "不眠（入眠困難・早期覚醒）",
+      "食欲低下・3kg体重減少",
+      "抑うつ気分・意欲低下",
+      "存在意義の問い（自殺念慮の可能性）"
+    ],
+    "recommendations": [
+      "定期的な通院",
+      "1週間後に再診",
+      "緊急時は連絡・受診",
+      "段階的な社会復帰"
+    ],
+    "prescriptions": [
+      {
+        "name": "SSRI（セルトラリン）",
+        "dosage": "25mg→50mgへ漸増",
+        "frequency": "朝食後",
+        "note": "効果まで2-4週間・急に中止しない"
+      },
+      {
+        "name": "睡眠導入剤（ゾルピデム）",
+        "dosage": "5mg",
+        "frequency": "就寝前",
+        "note": "短期間使用・徐々に中止"
+      }
+    ],
+    "follow_up": "1週間後再診・緊急時連絡可",
+    "alerts": ["自殺念慮の可能性あり・注意深いフォロー必要"]
+  }
+}

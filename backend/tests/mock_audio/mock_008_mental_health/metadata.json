@@ -1,0 +1,140 @@
+{
+  "scenario_id": "mock_008",
+  "scenario": "mental_health",
+  "title": "心療内科相談 - Mental Health Consultation",
+  "participants": {
+    "doctor": {
+      "name": "心療内科医",
+      "specialty": "心療内科",
+      "hospital": "メンタルクリニック"
+    },
+    "patient": {
+      "name": "患者B",
+      "age": 35,
+      "gender": "female"
+    }
+  },
+  "total_turns": 15,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "doctor",
+      "text": "今日はいかがですか？最近の調子は？",
+      "file": "000_doctor.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 5
+    },
+    {
+      "index": 1,
+      "speaker": "patient",
+      "text": "...最近、眠れないんです。朝起きるのも辛くて。",
+      "file": "001_patient.mp3",
+      "timestamp_start": 5,
+      "timestamp_end": 12
+    },
+    {
+      "index": 2,
+      "speaker": "doctor",
+      "text": "何かきっかけはありましたか？",
+      "file": "002_doctor.mp3",
+      "timestamp_start": 12,
+      "timestamp_end": 15
+    },
+    {
+      "index": 3,
+      "speaker": "patient",
+      "text": "仕事が忙しくて...プレッシャーがすごくて。",
+      "file": "003_patient.mp3",
+      "timestamp_start": 15,
+      "timestamp_end": 21
+    },
+    {
+      "index": 4,
+      "speaker": "doctor",
+      "text": "食欲はどうですか？",
+      "file": "004_doctor.mp3",
+      "timestamp_start": 21,
+      "timestamp_end": 23
+    },
+    {
+      "index": 5,
+      "speaker": "patient",
+      "text": "あんまり食べたくないです。体重も3キロ減りました。",
+      "file": "005_patient.mp3",
+      "timestamp_start": 23,
+      "timestamp_end": 29
+    },
+    {
+      "index": 6,
+      "speaker": "doctor",
+      "text": "気分が落ち込むことは？",
+      "file": "006_doctor.mp3",
+      "timestamp_start": 29,
+      "timestamp_end": 32
+    },
+    {
+      "index": 7,
+      "speaker": "patient",
+      "text": "はい...何もしたくなくなります。時々、生きてる意味が分からなくて...。",
+      "file": "007_patient.mp3",
+      "timestamp_start": 32,
+      "timestamp_end": 42
+    },
+    {
+      "index": 8,
+      "speaker": "doctor",
+      "text": "辛いですね。よく話してくれました。",
+      "file": "008_doctor.mp3",
+      "timestamp_start": 42,
+      "timestamp_end": 46
+    },
+    {
+      "index": 9,
+      "speaker": "doctor",
+      "text": "抗うつ薬を出します。SSRIという種類です。効果が出るまで2〜4週間かかります。",
+      "file": "009_doctor.mp3",
+      "timestamp_start": 46,
+      "timestamp_end": 56
+    },
+    {
+      "index": 10,
+      "speaker": "patient",
+      "text": "依存性はありますか？",
+      "file": "010_patient.mp3",
+      "timestamp_start": 56,
+      "timestamp_end": 58
+    },
+    {
+      "index": 11,
+      "speaker": "doctor",
+      "text": "依存性は低いです。でも、急に止めないでください。徐々に減らします。",
+      "file": "011_doctor.mp3",
+      "timestamp_start": 58,
+      "timestamp_end": 66
+    },
+    {
+      "index": 12,
+      "speaker": "doctor",
+      "text": "睡眠導入剤も出します。短期間だけ使って、睡眠リズムを整えましょう。",
+      "file": "012_doctor.mp3",
+      "timestamp_start": 66,
+      "timestamp_end": 74
+    },
+    {
+      "index": 13,
+      "speaker": "doctor",
+      "text": "1週間後にまた来てください。もし辛くなったら、いつでも連絡してくださいね。",
+      "file": "013_doctor.mp3",
+      "timestamp_start": 74,
+      "timestamp_end": 82
+    },
+    {
+      "index": 14,
+      "speaker": "patient",
+      "text": "ありがとうございます。",
+      "file": "014_patient.mp3",
+      "timestamp_start": 82,
+      "timestamp_end": 85
+    }
+  ]
+}

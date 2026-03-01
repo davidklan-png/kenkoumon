@@ -1,0 +1,198 @@
+{
+  "id": "mock_010",
+  "scenario": "elderly_confusion",
+  "title": "高齢者・認知症疑い - Elderly Patient with Cognitive Concerns",
+  "language": "ja",
+  "duration_seconds": 580,
+  "edge_case": "elderly_cognitive_impairment_repetition",
+  "participants": {
+    "doctor": {
+      "name": "老年科医",
+      "specialty": "老年内科",
+      "hospital": "地域包括ケアセンター"
+    },
+    "patient": {
+      "name": "山田フミ",
+      "age": 85,
+      "gender": "female"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "山田さん、こんにちは。今日はどうしましたか？",
+      "timestamp_start": 0,
+      "timestamp_end": 5
+    },
+    {
+      "speaker": "patient",
+      "text": "あ、こんにちは...えっと、何でしたっけ？",
+      "timestamp_start": 5,
+      "timestamp_end": 10
+    },
+    {
+      "speaker": "doctor",
+      "text": "大丈夫ですよ。ゆっくり思い出してください。",
+      "timestamp_start": 10,
+      "timestamp_end": 14
+    },
+    {
+      "speaker": "patient",
+      "text": "ああ、そうそう。最近、物忘れが多くて...。同じことを何度も聞いちゃうの。",
+      "timestamp_start": 14,
+      "timestamp_end": 24
+    },
+    {
+      "speaker": "doctor",
+      "text": "例えば、どんなことですか？",
+      "timestamp_start": 24,
+      "timestamp_end": 27
+    },
+    {
+      "speaker": "patient",
+      "text": "お茶を入れたこと忘れちゃったり、孫の名前が出てこなかったり...。",
+      "timestamp_start": 27,
+      "timestamp_end": 35
+    },
+    {
+      "speaker": "patient",
+      "text": "先生、今日は何の検査でしたっけ？",
+      "timestamp_start": 35,
+      "timestamp_end": 38
+    },
+    {
+      "speaker": "doctor",
+      "text": "まだ検査は始まっていませんよ。まずはお話を聞いているんです。",
+      "timestamp_start": 38,
+      "timestamp_end": 44
+    },
+    {
+      "speaker": "patient",
+      "text": "あ、そうでしたか。ごめんなさいね。",
+      "timestamp_start": 44,
+      "timestamp_end": 48
+    },
+    {
+      "speaker": "doctor",
+      "text": "大丈夫です。日常生活で困っていることはありますか？",
+      "timestamp_start": 48,
+      "timestamp_end": 54
+    },
+    {
+      "speaker": "patient",
+      "text": "お買い物に行ったら、何を買うのか忘れちゃって...。",
+      "timestamp_start": 54,
+      "timestamp_end": 60
+    },
+    {
+      "speaker": "doctor",
+      "text": "少し簡単なテストをしましょうか。今日は何月何日ですか？",
+      "timestamp_start": 60,
+      "timestamp_end": 66
+    },
+    {
+      "speaker": "patient",
+      "text": "えっと...3月...ですよね？何日でしたっけ...？",
+      "timestamp_start": 66,
+      "timestamp_end": 74
+    },
+    {
+      "speaker": "doctor",
+      "text": "いいえ、大丈夫ですよ。100から7を引いてください。",
+      "timestamp_start": 74,
+      "timestamp_end": 80
+    },
+    {
+      "speaker": "patient",
+      "text": "100から...7...えっと...93？",
+      "timestamp_start": 80,
+      "timestamp_end": 88
+    },
+    {
+      "speaker": "doctor",
+      "text": "正解です！もう一回、7を引いてください。",
+      "timestamp_start": 88,
+      "timestamp_end": 92
+    },
+    {
+      "speaker": "patient",
+      "text": "えっと...86？先生、何の話でしたっけ？",
+      "timestamp_start": 92,
+      "timestamp_end": 100
+    },
+    {
+      "speaker": "doctor",
+      "text": "記憶のテストをしていますよ。山田さん、少し認知機能が落ちているかもしれません。",
+      "timestamp_start": 100,
+      "timestamp_end": 110
+    },
+    {
+      "speaker": "doctor",
+      "text": "認知症の可能性があります。詳しい検査をしましょう。",
+      "timestamp_start": 110,
+      "timestamp_end": 116
+    },
+    {
+      "speaker": "patient",
+      "text": "認知症...？私、ボケちゃったんですか？",
+      "timestamp_start": 116,
+      "timestamp_end": 122
+    },
+    {
+      "speaker": "doctor",
+      "text": "まだ早期です。薬で進行を遅らせることができます。",
+      "timestamp_start": 122,
+      "timestamp_end": 128
+    },
+    {
+      "speaker": "doctor",
+      "text": "ドネペジルという薬を処方します。毎日飲んでください。",
+      "timestamp_start": 128,
+      "timestamp_end": 134
+    },
+    {
+      "speaker": "patient",
+      "text": "分かりました。先生、何の薬でしたっけ？",
+      "timestamp_start": 134,
+      "timestamp_end": 138
+    },
+    {
+      "speaker": "doctor",
+      "text": "ドネペジルです。物忘れを減らす薬です。毎日、寝る前に1錠飲んでください。",
+      "timestamp_start": 138,
+      "timestamp_end": 148
+    },
+    {
+      "speaker": "patient",
+      "text": "寝る前に...分かりました。ありがとうございます。",
+      "timestamp_start": 148,
+      "timestamp_end": 154
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "物忘れ・記憶障害",
+    "findings": [
+      "短期記憶障害（直前の会話忘れ）",
+      "見当識障害（日付不明）",
+      "計算力低下（100-7連続計算可能だが反復質問）",
+      "日常生活への影響（買い物での忘れ物）",
+      "認知症疑い（早期）"
+    ],
+    "recommendations": [
+      "詳細な認知機能検査（MMSE等）",
+      "頭部MRI検査",
+      "家族への説明・支援計画",
+      "定期的な通院"
+    ],
+    "prescriptions": [
+      {
+        "name": "ドネペジル",
+        "dosage": "3mg→5mgへ漸増",
+        "frequency": "就寝前1錠",
+        "note": "コリンエステラーゼ阻害薬・認知症進行抑制"
+      }
+    ],
+    "follow_up": "2週間後再診・認知機能検査・画像検査",
+    "care_notes": ["患者は質問を繰り返す傾向あり・重要情報は繰り返し説明する"]
+  }
+}

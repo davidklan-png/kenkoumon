@@ -1,0 +1,68 @@
+{
+  "scenario_id": "mock_006",
+  "scenario": "emergency_short",
+  "title": "緊急短時間 - Emergency Brief Consultation",
+  "participants": {
+    "doctor": {
+      "name": "救急医",
+      "specialty": "救急医学",
+      "hospital": "救急外来"
+    },
+    "patient": {
+      "name": "患者A",
+      "age": 45,
+      "gender": "male"
+    }
+  },
+  "total_turns": 6,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "doctor",
+      "text": "何がありましたか？",
+      "file": "000_doctor.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 2
+    },
+    {
+      "index": 1,
+      "speaker": "patient",
+      "text": "急に胸が痛くなって、冷や汗が出て。",
+      "file": "001_patient.mp3",
+      "timestamp_start": 2,
+      "timestamp_end": 6
+    },
+    {
+      "index": 2,
+      "speaker": "doctor",
+      "text": "いつからですか？",
+      "file": "002_doctor.mp3",
+      "timestamp_start": 6,
+      "timestamp_end": 7
+    },
+    {
+      "index": 3,
+      "speaker": "patient",
+      "text": "30分前です。",
+      "file": "003_patient.mp3",
+      "timestamp_start": 7,
+      "timestamp_end": 9
+    },
+    {
+      "index": 4,
+      "speaker": "doctor",
+      "text": "心電図とります。横になってください。",
+      "file": "004_doctor.mp3",
+      "timestamp_start": 9,
+      "timestamp_end": 12
+    },
+    {
+      "index": 5,
+      "speaker": "doctor",
+      "text": "アスピリン飲んでください。救急車呼びます。",
+      "file": "005_doctor.mp3",
+      "timestamp_start": 12,
+      "timestamp_end": 16
+    }
+  ]
+}

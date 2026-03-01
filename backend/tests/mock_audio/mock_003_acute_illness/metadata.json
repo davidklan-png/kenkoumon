@@ -1,0 +1,132 @@
+{
+  "scenario_id": "mock_003",
+  "scenario": "acute_illness",
+  "title": "風邪症状の相談 - Cold/Flu Consultation",
+  "participants": {
+    "doctor": {
+      "name": "高橋先生",
+      "specialty": "一般内科",
+      "hospital": "まちなか診療所"
+    },
+    "patient": {
+      "name": "中村一郎",
+      "age": 32,
+      "gender": "male"
+    }
+  },
+  "total_turns": 14,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "patient",
+      "text": "先生、3日前から咳が出て、昨日から熱も出ました。",
+      "file": "000_patient.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 6
+    },
+    {
+      "index": 1,
+      "speaker": "doctor",
+      "text": "どのくらいの熱ですか？",
+      "file": "001_doctor.mp3",
+      "timestamp_start": 6,
+      "timestamp_end": 8
+    },
+    {
+      "index": 2,
+      "speaker": "patient",
+      "text": "今朝測ったら38.2度ありました。",
+      "file": "002_patient.mp3",
+      "timestamp_start": 8,
+      "timestamp_end": 12
+    },
+    {
+      "index": 3,
+      "speaker": "doctor",
+      "text": "喉の痛みや鼻水はありますか？",
+      "file": "003_doctor.mp3",
+      "timestamp_start": 12,
+      "timestamp_end": 15
+    },
+    {
+      "index": 4,
+      "speaker": "patient",
+      "text": "喉が痛いです。あと、体がだるくて頭も痛いです。",
+      "file": "004_patient.mp3",
+      "timestamp_start": 15,
+      "timestamp_end": 20
+    },
+    {
+      "index": 5,
+      "speaker": "doctor",
+      "text": "少し喉を見せてください。「あー」と言ってください。",
+      "file": "005_doctor.mp3",
+      "timestamp_start": 20,
+      "timestamp_end": 25
+    },
+    {
+      "index": 6,
+      "speaker": "patient",
+      "text": "あーーー",
+      "file": "006_patient.mp3",
+      "timestamp_start": 25,
+      "timestamp_end": 28
+    },
+    {
+      "index": 7,
+      "speaker": "doctor",
+      "text": "扁桃が腫れて赤くなっていますね。インフルエンザの検査をしましょう。",
+      "file": "007_doctor.mp3",
+      "timestamp_start": 28,
+      "timestamp_end": 35
+    },
+    {
+      "index": 8,
+      "speaker": "doctor",
+      "text": "...検査結果は陰性でした。普通の風邪のようです。",
+      "file": "008_doctor.mp3",
+      "timestamp_start": 35,
+      "timestamp_end": 42
+    },
+    {
+      "index": 9,
+      "speaker": "doctor",
+      "text": "解熱剤と咳止め、それに抗生物質を出します。扁桃腺の炎症を抑えるためです。",
+      "file": "009_doctor.mp3",
+      "timestamp_start": 42,
+      "timestamp_end": 52
+    },
+    {
+      "index": 10,
+      "speaker": "patient",
+      "text": "仕事に行っても大丈夫ですか？",
+      "file": "010_patient.mp3",
+      "timestamp_start": 52,
+      "timestamp_end": 55
+    },
+    {
+      "index": 11,
+      "speaker": "doctor",
+      "text": "熱が下がるまで2〜3日は自宅で休んでください。水分を十分に取ってくださいね。",
+      "file": "011_doctor.mp3",
+      "timestamp_start": 55,
+      "timestamp_end": 64
+    },
+    {
+      "index": 12,
+      "speaker": "doctor",
+      "text": "もし39度以上の熱が続いたり、呼吸が苦しくなったら、すぐにまた来てください。",
+      "file": "012_doctor.mp3",
+      "timestamp_start": 64,
+      "timestamp_end": 72
+    },
+    {
+      "index": 13,
+      "speaker": "patient",
+      "text": "分かりました。ありがとうございます。",
+      "file": "013_patient.mp3",
+      "timestamp_start": 72,
+      "timestamp_end": 76
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "scenario_id": "mock_004",
+  "scenario": "medication_review",
+  "title": "多剤併用の確認 - Polypharmacy Review",
+  "participants": {
+    "doctor": {
+      "name": "伊藤先生",
+      "specialty": "老年内科",
+      "hospital": "ひまわり在宅医療クリニック"
+    },
+    "patient": {
+      "name": "小林フミ",
+      "age": 78,
+      "gender": "female"
+    }
+  },
+  "total_turns": 20,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "doctor",
+      "text": "小林さん、こんにちは。今日はお薬の確認をしましょうね。",
+      "file": "000_doctor.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 6
+    },
+    {
+      "index": 1,
+      "speaker": "patient",
+      "text": "はい、お願いします。薬が多くて分からなくなってきて。",
+      "file": "001_patient.mp3",
+      "timestamp_start": 6,
+      "timestamp_end": 12
+    },
+    {
+      "index": 2,
+      "speaker": "doctor",
+      "text": "今、何種類くらい飲んでいますか？",
+      "file": "002_doctor.mp3",
+      "timestamp_start": 12,
+      "timestamp_end": 16
+    },
+    {
+      "index": 3,
+      "speaker": "patient",
+      "text": "朝晩で10種類くらいあると思うんです。",
+      "file": "003_patient.mp3",
+      "timestamp_start": 16,
+      "timestamp_end": 21
+    },
+    {
+      "index": 4,
+      "speaker": "doctor",
+      "text": "少しずつ整理しましょう。まず、高血圧のお薬から。",
+      "file": "004_doctor.mp3",
+      "timestamp_start": 21,
+      "timestamp_end": 28
+    },
+    {
+      "index": 5,
+      "speaker": "doctor",
+      "text": "アムロジピン5mgとカルベジロール2.5mgを飲んでいますね。血圧はどうですか？",
+      "file": "005_doctor.mp3",
+      "timestamp_start": 28,
+      "timestamp_end": 38
+    },
+    {
+      "index": 6,
+      "speaker": "patient",
+      "text": "めまいがすることがあります。立ち上がるとふらっとするんです。",
+      "file": "006_patient.mp3",
+      "timestamp_start": 38,
+      "timestamp_end": 45
+    },
+    {
+      "index": 7,
+      "speaker": "doctor",
+      "text": "起立性低血圧の可能性がありますね。カルベジロールを少し減らしましょう。",
+      "file": "007_doctor.mp3",
+      "timestamp_start": 45,
+      "timestamp_end": 54
+    },
+    {
+      "index": 8,
+      "speaker": "doctor",
+      "text": "次に、骨粗鬆症のお薬。ビスフォスフォネートを週1回飲んでいますね。",
+      "file": "008_doctor.mp3",
+      "timestamp_start": 54,
+      "timestamp_end": 62
+    },
+    {
+      "index": 9,
+      "speaker": "patient",
+      "text": "あ、それ飲むと胸が痛くなることがあります。",
+      "file": "009_patient.mp3",
+      "timestamp_start": 62,
+      "timestamp_end": 68
+    },
+    {
+      "index": 10,
+      "speaker": "doctor",
+      "text": "食道炎のリスクがありますね。点滴薬のゾレドロン酸に変更しましょう。年1回で済みます。",
+      "file": "010_doctor.mp3",
+      "timestamp_start": 68,
+      "timestamp_end": 80
+    },
+    {
+      "index": 11,
+      "speaker": "doctor",
+      "text": "胃薬のオメプラゾールは続けます。骨の薬を変えても胃の保護は必要ですから。",
+      "file": "011_doctor.mp3",
+      "timestamp_start": 80,
+      "timestamp_end": 90
+    },
+    {
+      "index": 12,
+      "speaker": "patient",
+      "text": "ビタミン剤は飲んだ方がいいですか？",
+      "file": "012_patient.mp3",
+      "timestamp_start": 90,
+      "timestamp_end": 94
+    },
+    {
+      "index": 13,
+      "speaker": "doctor",
+      "text": "ビタミンB12と葉酸は貧血予防に続けましょう。ビタミンDも骨のため大事です。",
+      "file": "013_doctor.mp3",
+      "timestamp_start": 94,
+      "timestamp_end": 104
+    },
+    {
+      "index": 14,
+      "speaker": "doctor",
+      "text": "睡眠薬のゾルピデムは5mg飲んでいますが、寝付きはどうですか？",
+      "file": "014_doctor.mp3",
+      "timestamp_start": 104,
+      "timestamp_end": 112
+    },
+    {
+      "index": 15,
+      "speaker": "patient",
+      "text": "最近はよく眠れています。",
+      "file": "015_patient.mp3",
+      "timestamp_start": 112,
+      "timestamp_end": 115
+    },
+    {
+      "index": 16,
+      "speaker": "doctor",
+      "text": "じゃあ、そのままでいいですね。でも、徐々に減らしていきましょう。",
+      "file": "016_doctor.mp3",
+      "timestamp_start": 115,
+      "timestamp_end": 122
+    },
+    {
+      "index": 17,
+      "speaker": "doctor",
+      "text": "まとめますね。カルベジロールを減量、骨の薬を点滴に変更、他はそのままです。",
+      "file": "017_doctor.mp3",
+      "timestamp_start": 122,
+      "timestamp_end": 132
+    },
+    {
+      "index": 18,
+      "speaker": "doctor",
+      "text": "これで朝晩で8種類になります。飲みやすくなりましたね。",
+      "file": "018_doctor.mp3",
+      "timestamp_start": 132,
+      "timestamp_end": 140
+    },
+    {
+      "index": 19,
+      "speaker": "patient",
+      "text": "ありがとうございます。助かります。",
+      "file": "019_patient.mp3",
+      "timestamp_start": 140,
+      "timestamp_end": 145
+    }
+  ]
+}

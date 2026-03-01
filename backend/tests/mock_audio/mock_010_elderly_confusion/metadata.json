@@ -1,0 +1,220 @@
+{
+  "scenario_id": "mock_010",
+  "scenario": "elderly_confusion",
+  "title": "高齢者・認知症疑い - Elderly Patient with Cognitive Concerns",
+  "participants": {
+    "doctor": {
+      "name": "老年科医",
+      "specialty": "老年内科",
+      "hospital": "地域包括ケアセンター"
+    },
+    "patient": {
+      "name": "山田フミ",
+      "age": 85,
+      "gender": "female"
+    }
+  },
+  "total_turns": 25,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "doctor",
+      "text": "山田さん、こんにちは。今日はどうしましたか？",
+      "file": "000_doctor.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 5
+    },
+    {
+      "index": 1,
+      "speaker": "patient",
+      "text": "あ、こんにちは...えっと、何でしたっけ？",
+      "file": "001_patient.mp3",
+      "timestamp_start": 5,
+      "timestamp_end": 10
+    },
+    {
+      "index": 2,
+      "speaker": "doctor",
+      "text": "大丈夫ですよ。ゆっくり思い出してください。",
+      "file": "002_doctor.mp3",
+      "timestamp_start": 10,
+      "timestamp_end": 14
+    },
+    {
+      "index": 3,
+      "speaker": "patient",
+      "text": "ああ、そうそう。最近、物忘れが多くて...。同じことを何度も聞いちゃうの。",
+      "file": "003_patient.mp3",
+      "timestamp_start": 14,
+      "timestamp_end": 24
+    },
+    {
+      "index": 4,
+      "speaker": "doctor",
+      "text": "例えば、どんなことですか？",
+      "file": "004_doctor.mp3",
+      "timestamp_start": 24,
+      "timestamp_end": 27
+    },
+    {
+      "index": 5,
+      "speaker": "patient",
+      "text": "お茶を入れたこと忘れちゃったり、孫の名前が出てこなかったり...。",
+      "file": "005_patient.mp3",
+      "timestamp_start": 27,
+      "timestamp_end": 35
+    },
+    {
+      "index": 6,
+      "speaker": "patient",
+      "text": "先生、今日は何の検査でしたっけ？",
+      "file": "006_patient.mp3",
+      "timestamp_start": 35,
+      "timestamp_end": 38
+    },
+    {
+      "index": 7,
+      "speaker": "doctor",
+      "text": "まだ検査は始まっていませんよ。まずはお話を聞いているんです。",
+      "file": "007_doctor.mp3",
+      "timestamp_start": 38,
+      "timestamp_end": 44
+    },
+    {
+      "index": 8,
+      "speaker": "patient",
+      "text": "あ、そうでしたか。ごめんなさいね。",
+      "file": "008_patient.mp3",
+      "timestamp_start": 44,
+      "timestamp_end": 48
+    },
+    {
+      "index": 9,
+      "speaker": "doctor",
+      "text": "大丈夫です。日常生活で困っていることはありますか？",
+      "file": "009_doctor.mp3",
+      "timestamp_start": 48,
+      "timestamp_end": 54
+    },
+    {
+      "index": 10,
+      "speaker": "patient",
+      "text": "お買い物に行ったら、何を買うのか忘れちゃって...。",
+      "file": "010_patient.mp3",
+      "timestamp_start": 54,
+      "timestamp_end": 60
+    },
+    {
+      "index": 11,
+      "speaker": "doctor",
+      "text": "少し簡単なテストをしましょうか。今日は何月何日ですか？",
+      "file": "011_doctor.mp3",
+      "timestamp_start": 60,
+      "timestamp_end": 66
+    },
+    {
+      "index": 12,
+      "speaker": "patient",
+      "text": "えっと...3月...ですよね？何日でしたっけ...？",
+      "file": "012_patient.mp3",
+      "timestamp_start": 66,
+      "timestamp_end": 74
+    },
+    {
+      "index": 13,
+      "speaker": "doctor",
+      "text": "いいえ、大丈夫ですよ。100から7を引いてください。",
+      "file": "013_doctor.mp3",
+      "timestamp_start": 74,
+      "timestamp_end": 80
+    },
+    {
+      "index": 14,
+      "speaker": "patient",
+      "text": "100から...7...えっと...93？",
+      "file": "014_patient.mp3",
+      "timestamp_start": 80,
+      "timestamp_end": 88
+    },
+    {
+      "index": 15,
+      "speaker": "doctor",
+      "text": "正解です！もう一回、7を引いてください。",
+      "file": "015_doctor.mp3",
+      "timestamp_start": 88,
+      "timestamp_end": 92
+    },
+    {
+      "index": 16,
+      "speaker": "patient",
+      "text": "えっと...86？先生、何の話でしたっけ？",
+      "file": "016_patient.mp3",
+      "timestamp_start": 92,
+      "timestamp_end": 100
+    },
+    {
+      "index": 17,
+      "speaker": "doctor",
+      "text": "記憶のテストをしていますよ。山田さん、少し認知機能が落ちているかもしれません。",
+      "file": "017_doctor.mp3",
+      "timestamp_start": 100,
+      "timestamp_end": 110
+    },
+    {
+      "index": 18,
+      "speaker": "doctor",
+      "text": "認知症の可能性があります。詳しい検査をしましょう。",
+      "file": "018_doctor.mp3",
+      "timestamp_start": 110,
+      "timestamp_end": 116
+    },
+    {
+      "index": 19,
+      "speaker": "patient",
+      "text": "認知症...？私、ボケちゃったんですか？",
+      "file": "019_patient.mp3",
+      "timestamp_start": 116,
+      "timestamp_end": 122
+    },
+    {
+      "index": 20,
+      "speaker": "doctor",
+      "text": "まだ早期です。薬で進行を遅らせることができます。",
+      "file": "020_doctor.mp3",
+      "timestamp_start": 122,
+      "timestamp_end": 128
+    },
+    {
+      "index": 21,
+      "speaker": "doctor",
+      "text": "ドネペジルという薬を処方します。毎日飲んでください。",
+      "file": "021_doctor.mp3",
+      "timestamp_start": 128,
+      "timestamp_end": 134
+    },
+    {
+      "index": 22,
+      "speaker": "patient",
+      "text": "分かりました。先生、何の薬でしたっけ？",
+      "file": "022_patient.mp3",
+      "timestamp_start": 134,
+      "timestamp_end": 138
+    },
+    {
+      "index": 23,
+      "speaker": "doctor",
+      "text": "ドネペジルです。物忘れを減らす薬です。毎日、寝る前に1錠飲んでください。",
+      "file": "023_doctor.mp3",
+      "timestamp_start": 138,
+      "timestamp_end": 148
+    },
+    {
+      "index": 24,
+      "speaker": "patient",
+      "text": "寝る前に...分かりました。ありがとうございます。",
+      "file": "024_patient.mp3",
+      "timestamp_start": 148,
+      "timestamp_end": 154
+    }
+  ]
+}

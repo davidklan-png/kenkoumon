@@ -1,0 +1,139 @@
+{
+  "id": "mock_007",
+  "scenario": "pediatric",
+  "title": "小児科診察 - Pediatric Consultation",
+  "language": "ja",
+  "duration_seconds": 380,
+  "edge_case": "child_patient_parent_present",
+  "participants": {
+    "doctor": {
+      "name": "小児科医",
+      "specialty": "小児科",
+      "hospital": "こどもクリニック"
+    },
+    "patient": {
+      "name": "はるくん",
+      "age": 5,
+      "gender": "male"
+    },
+    "parent": {
+      "name": "はるくんのママ",
+      "age": 32,
+      "gender": "female"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "はるくん、こんにちは！元気？",
+      "timestamp_start": 0,
+      "timestamp_end": 3
+    },
+    {
+      "speaker": "patient",
+      "text": "うん！",
+      "timestamp_start": 3,
+      "timestamp_end": 4
+    },
+    {
+      "speaker": "parent",
+      "text": "先生、夜になると咳がひどくて、熱も37.5度くらいあります。",
+      "timestamp_start": 4,
+      "timestamp_end": 10
+    },
+    {
+      "speaker": "doctor",
+      "text": "何日くらいですか？",
+      "timestamp_start": 10,
+      "timestamp_end": 12
+    },
+    {
+      "speaker": "parent",
+      "text": "3日前からです。",
+      "timestamp_start": 12,
+      "timestamp_end": 14
+    },
+    {
+      "speaker": "doctor",
+      "text": "はるくん、お腹見せてくれる？ここ痛い？",
+      "timestamp_start": 14,
+      "timestamp_end": 18
+    },
+    {
+      "speaker": "patient",
+      "text": "痛くない！",
+      "timestamp_start": 18,
+      "timestamp_end": 20
+    },
+    {
+      "speaker": "doctor",
+      "text": "いい子だね！お口開けて。「あー」ってして。",
+      "timestamp_start": 20,
+      "timestamp_end": 25
+    },
+    {
+      "speaker": "patient",
+      "text": "あーーー",
+      "timestamp_start": 25,
+      "timestamp_end": 27
+    },
+    {
+      "speaker": "doctor",
+      "text": "お母さん、ちょっと喉が赤いですね。喘息の可能性もあるので、吸入薬を出します。",
+      "timestamp_start": 27,
+      "timestamp_end": 36
+    },
+    {
+      "speaker": "parent",
+      "text": "吸入は毎日ですか？",
+      "timestamp_start": 36,
+      "timestamp_end": 38
+    },
+    {
+      "speaker": "doctor",
+      "text": "咳が出るときだけ使ってください。あと、解熱剤も出しますね。",
+      "timestamp_start": 38,
+      "timestamp_end": 44
+    },
+    {
+      "speaker": "doctor",
+      "text": "はるくん、また来週ね！バイバーイ！",
+      "timestamp_start": 44,
+      "timestamp_end": 48
+    },
+    {
+      "speaker": "patient",
+      "text": "バイバーイ！",
+      "timestamp_start": 48,
+      "timestamp_end": 50
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "夜間咳嗽・微熱",
+    "findings": [
+      "体温37.5℃",
+      "咽頭発赤",
+      "喘息の可能性"
+    ],
+    "recommendations": [
+      "吸入薬は咳嗽時使用",
+      "水分十分に摂取",
+      "1週間後に再診"
+    ],
+    "prescriptions": [
+      {
+        "name": "吸入薬（サルブタモール）",
+        "dosage": "-",
+        "frequency": "咳嗽時頓用",
+        "note": "小児用量"
+      },
+      {
+        "name": "解熱剤（アセトアミノフェンシロップ）",
+        "dosage": "体重に応じて",
+        "frequency": "発熱時",
+        "note": "小児用シロップ"
+      }
+    ],
+    "follow_up": "1週間後再診"
+  }
+}

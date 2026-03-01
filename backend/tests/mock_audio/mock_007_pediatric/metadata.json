@@ -1,0 +1,137 @@
+{
+  "scenario_id": "mock_007",
+  "scenario": "pediatric",
+  "title": "小児科診察 - Pediatric Consultation",
+  "participants": {
+    "doctor": {
+      "name": "小児科医",
+      "specialty": "小児科",
+      "hospital": "こどもクリニック"
+    },
+    "patient": {
+      "name": "はるくん",
+      "age": 5,
+      "gender": "male"
+    },
+    "parent": {
+      "name": "はるくんのママ",
+      "age": 32,
+      "gender": "female"
+    }
+  },
+  "total_turns": 14,
+  "files": [
+    {
+      "index": 0,
+      "speaker": "doctor",
+      "text": "はるくん、こんにちは！元気？",
+      "file": "000_doctor.mp3",
+      "timestamp_start": 0,
+      "timestamp_end": 3
+    },
+    {
+      "index": 1,
+      "speaker": "patient",
+      "text": "うん！",
+      "file": "001_patient.mp3",
+      "timestamp_start": 3,
+      "timestamp_end": 4
+    },
+    {
+      "index": 2,
+      "speaker": "parent",
+      "text": "先生、夜になると咳がひどくて、熱も37.5度くらいあります。",
+      "file": "002_parent.mp3",
+      "timestamp_start": 4,
+      "timestamp_end": 10
+    },
+    {
+      "index": 3,
+      "speaker": "doctor",
+      "text": "何日くらいですか？",
+      "file": "003_doctor.mp3",
+      "timestamp_start": 10,
+      "timestamp_end": 12
+    },
+    {
+      "index": 4,
+      "speaker": "parent",
+      "text": "3日前からです。",
+      "file": "004_parent.mp3",
+      "timestamp_start": 12,
+      "timestamp_end": 14
+    },
+    {
+      "index": 5,
+      "speaker": "doctor",
+      "text": "はるくん、お腹見せてくれる？ここ痛い？",
+      "file": "005_doctor.mp3",
+      "timestamp_start": 14,
+      "timestamp_end": 18
+    },
+    {
+      "index": 6,
+      "speaker": "patient",
+      "text": "痛くない！",
+      "file": "006_patient.mp3",
+      "timestamp_start": 18,
+      "timestamp_end": 20
+    },
+    {
+      "index": 7,
+      "speaker": "doctor",
+      "text": "いい子だね！お口開けて。「あー」ってして。",
+      "file": "007_doctor.mp3",
+      "timestamp_start": 20,
+      "timestamp_end": 25
+    },
+    {
+      "index": 8,
+      "speaker": "patient",
+      "text": "あーーー",
+      "file": "008_patient.mp3",
+      "timestamp_start": 25,
+      "timestamp_end": 27
+    },
+    {
+      "index": 9,
+      "speaker": "doctor",
+      "text": "お母さん、ちょっと喉が赤いですね。喘息の可能性もあるので、吸入薬を出します。",
+      "file": "009_doctor.mp3",
+      "timestamp_start": 27,
+      "timestamp_end": 36
+    },
+    {
+      "index": 10,
+      "speaker": "parent",
+      "text": "吸入は毎日ですか？",
+      "file": "010_parent.mp3",
+      "timestamp_start": 36,
+      "timestamp_end": 38
+    },
+    {
+      "index": 11,
+      "speaker": "doctor",
+      "text": "咳が出るときだけ使ってください。あと、解熱剤も出しますね。",
+      "file": "011_doctor.mp3",
+      "timestamp_start": 38,
+      "timestamp_end": 44
+    },
+    {
+      "index": 12,
+      "speaker": "doctor",
+      "text": "はるくん、また来週ね！バイバーイ！",
+      "file": "012_doctor.mp3",
+      "timestamp_start": 44,
+      "timestamp_end": 48
+    },
+    {
+      "index": 13,
+      "speaker": "patient",
+      "text": "バイバーイ！",
+      "file": "013_patient.mp3",
+      "timestamp_start": 48,
+      "timestamp_end": 50
+    }
+  ]
+}
