@@ -1,0 +1,140 @@
+{
+  "id": "mock_003",
+  "scenario": "acute_illness",
+  "title": "風邪症状の相談 - Cold/Flu Consultation",
+  "language": "ja",
+  "duration_seconds": 320,
+  "participants": {
+    "doctor": {
+      "name": "高橋先生",
+      "specialty": "一般内科",
+      "hospital": "まちなか診療所"
+    },
+    "patient": {
+      "name": "中村一郎",
+      "age": 32,
+      "gender": "male"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "patient",
+      "text": "先生、3日前から咳が出て、昨日から熱も出ました。",
+      "timestamp_start": 0,
+      "timestamp_end": 6
+    },
+    {
+      "speaker": "doctor",
+      "text": "どのくらいの熱ですか？",
+      "timestamp_start": 6,
+      "timestamp_end": 8
+    },
+    {
+      "speaker": "patient",
+      "text": "今朝測ったら38.2度ありました。",
+      "timestamp_start": 8,
+      "timestamp_end": 12
+    },
+    {
+      "speaker": "doctor",
+      "text": "喉の痛みや鼻水はありますか？",
+      "timestamp_start": 12,
+      "timestamp_end": 15
+    },
+    {
+      "speaker": "patient",
+      "text": "喉が痛いです。あと、体がだるくて頭も痛いです。",
+      "timestamp_start": 15,
+      "timestamp_end": 20
+    },
+    {
+      "speaker": "doctor",
+      "text": "少し喉を見せてください。「あー」と言ってください。",
+      "timestamp_start": 20,
+      "timestamp_end": 25
+    },
+    {
+      "speaker": "patient",
+      "text": "あーーー",
+      "timestamp_start": 25,
+      "timestamp_end": 28
+    },
+    {
+      "speaker": "doctor",
+      "text": "扁桃が腫れて赤くなっていますね。インフルエンザの検査をしましょう。",
+      "timestamp_start": 28,
+      "timestamp_end": 35
+    },
+    {
+      "speaker": "doctor",
+      "text": "...検査結果は陰性でした。普通の風邪のようです。",
+      "timestamp_start": 35,
+      "timestamp_end": 42
+    },
+    {
+      "speaker": "doctor",
+      "text": "解熱剤と咳止め、それに抗生物質を出します。扁桃腺の炎症を抑えるためです。",
+      "timestamp_start": 42,
+      "timestamp_end": 52
+    },
+    {
+      "speaker": "patient",
+      "text": "仕事に行っても大丈夫ですか？",
+      "timestamp_start": 52,
+      "timestamp_end": 55
+    },
+    {
+      "speaker": "doctor",
+      "text": "熱が下がるまで2〜3日は自宅で休んでください。水分を十分に取ってくださいね。",
+      "timestamp_start": 55,
+      "timestamp_end": 64
+    },
+    {
+      "speaker": "doctor",
+      "text": "もし39度以上の熱が続いたり、呼吸が苦しくなったら、すぐにまた来てください。",
+      "timestamp_start": 64,
+      "timestamp_end": 72
+    },
+    {
+      "speaker": "patient",
+      "text": "分かりました。ありがとうございます。",
+      "timestamp_start": 72,
+      "timestamp_end": 76
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "発熱・咳嗽・咽頭痛",
+    "findings": [
+      "体温38.2℃",
+      "扁桃腫脹・発赤",
+      "インフルエンザ検査陰性",
+      "急性咽頭炎・上気道炎と診断"
+    ],
+    "recommendations": [
+      "2〜3日自宅安静",
+      "十分な水分摂取",
+      "39度以上の発熱や呼吸困難時は即受診"
+    ],
+    "prescriptions": [
+      {
+        "name": "解熱鎮痛剤（アセトアミノフェン）",
+        "dosage": "必要時",
+        "frequency": "発熱時",
+        "note": "解熱目的"
+      },
+      {
+        "name": "咳止め（デキストロメトルファン）",
+        "dosage": "TBD",
+        "frequency": "1日3回",
+        "note": "鎮咳目的"
+      },
+      {
+        "name": "抗生物質（アモキシシリン）",
+        "dosage": "250mg",
+        "frequency": "1日3回・5日間",
+        "note": "扁桃炎治療"
+      }
+    ],
+    "follow_up": "症状悪化時・3日以内改善なければ再受診"
+  }
+}

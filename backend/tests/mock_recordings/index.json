@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "created": "2026-03-01",
+  "language": "ja",
+  "description": "Mock doctor-patient recordings for Kenkoumon testing",
+  "scenarios": [
+    {
+      "id": "mock_001",
+      "file": "scenario_01_general_checkup.json",
+      "scenario": "general_checkup",
+      "title": "一般健康診断 - General Health Checkup",
+      "duration_seconds": 420,
+      "complexity": "low",
+      "topics": ["preventive care", "lifestyle", "hypertension", "cholesterol"]
+    },
+    {
+      "id": "mock_002",
+      "file": "scenario_02_diabetes_followup.json",
+      "scenario": "chronic_condition_followup",
+      "title": "糖尿病定期検診 - Diabetes Regular Checkup",
+      "duration_seconds": 580,
+      "complexity": "medium",
+      "topics": ["diabetes", "HbA1c", "kidney function", "medication management"]
+    },
+    {
+      "id": "mock_003",
+      "file": "scenario_03_cold_consultation.json",
+      "scenario": "acute_illness",
+      "title": "風邪症状の相談 - Cold/Flu Consultation",
+      "duration_seconds": 320,
+      "complexity": "low",
+      "topics": ["fever", "cough", "sore throat", "prescriptions"]
+    },
+    {
+      "id": "mock_004",
+      "file": "scenario_04_medication_review.json",
+      "scenario": "medication_review",
+      "title": "多剤併用の確認 - Polypharmacy Review",
+      "duration_seconds": 650,
+      "complexity": "high",
+      "topics": ["polypharmacy", "elderly care", "drug interactions", "deprescribing"]
+    },
+    {
+      "id": "mock_005",
+      "file": "scenario_05_specialist_referral.json",
+      "scenario": "specialist_referral",
+      "title": "専門医紹介 - Specialist Referral",
+      "duration_seconds": 480,
+      "complexity": "medium",
+      "topics": ["cardiology", "angina", "emergency protocols", "referral process"]
+    }
+  ],
+  "usage_notes": [
+    "Each scenario includes expected_summary for validation",
+    "Transcripts use natural Japanese clinical dialogue",
+    "Medical terminology covers common conditions and medications",
+    "Timestamps allow for testing audio sync features"
+  ]
+}

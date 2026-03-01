@@ -1,0 +1,199 @@
+{
+  "id": "mock_004",
+  "scenario": "medication_review",
+  "title": "多剤併用の確認 - Polypharmacy Review",
+  "language": "ja",
+  "duration_seconds": 650,
+  "participants": {
+    "doctor": {
+      "name": "伊藤先生",
+      "specialty": "老年内科",
+      "hospital": "ひまわり在宅医療クリニック"
+    },
+    "patient": {
+      "name": "小林フミ",
+      "age": 78,
+      "gender": "female"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "小林さん、こんにちは。今日はお薬の確認をしましょうね。",
+      "timestamp_start": 0,
+      "timestamp_end": 6
+    },
+    {
+      "speaker": "patient",
+      "text": "はい、お願いします。薬が多くて分からなくなってきて。",
+      "timestamp_start": 6,
+      "timestamp_end": 12
+    },
+    {
+      "speaker": "doctor",
+      "text": "今、何種類くらい飲んでいますか？",
+      "timestamp_start": 12,
+      "timestamp_end": 16
+    },
+    {
+      "speaker": "patient",
+      "text": "朝晩で10種類くらいあると思うんです。",
+      "timestamp_start": 16,
+      "timestamp_end": 21
+    },
+    {
+      "speaker": "doctor",
+      "text": "少しずつ整理しましょう。まず、高血圧のお薬から。",
+      "timestamp_start": 21,
+      "timestamp_end": 28
+    },
+    {
+      "speaker": "doctor",
+      "text": "アムロジピン5mgとカルベジロール2.5mgを飲んでいますね。血圧はどうですか？",
+      "timestamp_start": 28,
+      "timestamp_end": 38
+    },
+    {
+      "speaker": "patient",
+      "text": "めまいがすることがあります。立ち上がるとふらっとするんです。",
+      "timestamp_start": 38,
+      "timestamp_end": 45
+    },
+    {
+      "speaker": "doctor",
+      "text": "起立性低血圧の可能性がありますね。カルベジロールを少し減らしましょう。",
+      "timestamp_start": 45,
+      "timestamp_end": 54
+    },
+    {
+      "speaker": "doctor",
+      "text": "次に、骨粗鬆症のお薬。ビスフォスフォネートを週1回飲んでいますね。",
+      "timestamp_start": 54,
+      "timestamp_end": 62
+    },
+    {
+      "speaker": "patient",
+      "text": "あ、それ飲むと胸が痛くなることがあります。",
+      "timestamp_start": 62,
+      "timestamp_end": 68
+    },
+    {
+      "speaker": "doctor",
+      "text": "食道炎のリスクがありますね。点滴薬のゾレドロン酸に変更しましょう。年1回で済みます。",
+      "timestamp_start": 68,
+      "timestamp_end": 80
+    },
+    {
+      "speaker": "doctor",
+      "text": "胃薬のオメプラゾールは続けます。骨の薬を変えても胃の保護は必要ですから。",
+      "timestamp_start": 80,
+      "timestamp_end": 90
+    },
+    {
+      "speaker": "patient",
+      "text": "ビタミン剤は飲んだ方がいいですか？",
+      "timestamp_start": 90,
+      "timestamp_end": 94
+    },
+    {
+      "speaker": "doctor",
+      "text": "ビタミンB12と葉酸は貧血予防に続けましょう。ビタミンDも骨のため大事です。",
+      "timestamp_start": 94,
+      "timestamp_end": 104
+    },
+    {
+      "speaker": "doctor",
+      "text": "睡眠薬のゾルピデムは5mg飲んでいますが、寝付きはどうですか？",
+      "timestamp_start": 104,
+      "timestamp_end": 112
+    },
+    {
+      "speaker": "patient",
+      "text": "最近はよく眠れています。",
+      "timestamp_start": 112,
+      "timestamp_end": 115
+    },
+    {
+      "speaker": "doctor",
+      "text": "じゃあ、そのままでいいですね。でも、徐々に減らしていきましょう。",
+      "timestamp_start": 115,
+      "timestamp_end": 122
+    },
+    {
+      "speaker": "doctor",
+      "text": "まとめますね。カルベジロールを減量、骨の薬を点滴に変更、他はそのままです。",
+      "timestamp_start": 122,
+      "timestamp_end": 132
+    },
+    {
+      "speaker": "doctor",
+      "text": "これで朝晩で8種類になります。飲みやすくなりましたね。",
+      "timestamp_start": 132,
+      "timestamp_end": 140
+    },
+    {
+      "speaker": "patient",
+      "text": "ありがとうございます。助かります。",
+      "timestamp_start": 140,
+      "timestamp_end": 145
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "多剤併用の確認・整理",
+    "findings": [
+      "現在内服10種類（朝晩）",
+      "めまい・立ちくらみあり（起立性低血圧疑い）",
+      "ビスフォスフォネート内服後の胸痛あり"
+    ],
+    "recommendations": [
+      "ゆっくり立ち上がる",
+      "内服薬の整理・減量",
+      "定期的な薬の見直し"
+    ],
+    "prescriptions": [
+      {
+        "name": "アムロジピン",
+        "dosage": "5mg",
+        "frequency": "朝1回",
+        "note": "継続"
+      },
+      {
+        "name": "カルベジロール",
+        "dosage": "1.25mg（減量）",
+        "frequency": "朝夕",
+        "note": "減量・めまい対策"
+      },
+      {
+        "name": "ゾレドロン酸",
+        "dosage": "5mg",
+        "frequency": "年1回点滴",
+        "note": "内服薬から変更・食道炎回避"
+      },
+      {
+        "name": "オメプラゾール",
+        "dosage": "10mg",
+        "frequency": "朝1回",
+        "note": "継続・胃保護"
+      },
+      {
+        "name": "ビタミンB12+葉酸",
+        "dosage": "-",
+        "frequency": "朝1回",
+        "note": "継続・貧血予防"
+      },
+      {
+        "name": "ビタミンD",
+        "dosage": "-",
+        "frequency": "朝1回",
+        "note": "継続・骨健康"
+      },
+      {
+        "name": "ゾルピデム",
+        "dosage": "5mg",
+        "frequency": "寝る前",
+        "note": "継続・徐々に減量予定"
+      }
+    ],
+    "follow_up": "1ヶ月後・血圧確認・めまいの評価"
+  }
+}

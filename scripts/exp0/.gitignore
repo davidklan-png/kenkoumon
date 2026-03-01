@@ -1,0 +1,7 @@
+# Experiment Zero output - contains sensitive medical data
+runs/
+*.m4a
+*.wav
+*.mp3
+*.txt
+*.md

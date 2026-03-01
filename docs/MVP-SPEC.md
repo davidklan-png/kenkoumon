@@ -28,10 +28,11 @@
 
 - Japanese audio → Japanese text
 - Medical terminology accuracy is critical (medication names, conditions, procedures)
-- API-based: Whisper or equivalent with Japan-region processing
+- **Primary:** On-device Whisper (whisper.cpp with CoreML/MLC) or user-hosted (Ollama)
+- **Optional fallback:** Cloud API (OpenAI Whisper with Japan-region processing)
 - Processing time: minutes acceptable, not real-time
 
-**Not included:** Real-time transcription, on-device transcription, speaker diarization (nice-to-have, not required).
+**Not included:** Real-time transcription, speaker diarization (nice-to-have, not required).
 
 ### F3: Report Generation
 
@@ -122,18 +123,20 @@ Patient Account
 
 ## Technical Stack (POC/MVP)
 
-| Component | Technology | Rationale |
-|---|---|---|
-| Mobile app | React Native or Flutter | Cross-platform, single codebase |
-| Audio recording | Native device APIs | Best quality, simplest approach |
-| Audio storage | Encrypted local + cloud upload | Patient controls deletion |
-| Transcription | OpenAI Whisper API (or Azure) | Best Japanese accuracy, Japan-region available via Azure |
-| Report generation | Claude API (via AWS Bedrock Tokyo) or GPT-4 (via Azure Japan East) | Japan-region data residency |
-| Data storage | PostgreSQL or equivalent | Entity-centric model, relational |
-| Secure link hosting | Simple web server with token-based access | Minimal infrastructure |
-| Authentication | Standard auth (email/password or social) | Patient account management |
+| Component | Primary Technology | Optional Fallback | Rationale |
+|---|---|---|---|
+| Mobile app | React Native or Flutter | - | Cross-platform, single codebase |
+| Audio recording | Native device APIs | - | Best quality, simplest approach |
+| Audio storage | Encrypted local storage | User-hosted S3/minio | Patient controls deletion |
+| Transcription | whisper.cpp (CoreML/MLC) | OpenAI Whisper API | On-device = privacy, no API fees |
+| Report generation | Llama.cpp / Gemma | Claude/GPT-4 API | On-device or user-hosted = privacy |
+| User-hosted AI | Ollama / LocalAI | - | For users with home server/NAS |
+| Cloud (opt-in) | OpenAI, Claude, GPT-4 | Japan-region only | For users without capable devices |
+| Data storage | SQLite (on-device) | PostgreSQL (optional) | Local-first, optional sync |
+| Secure link hosting | Simple web server | - | Minimal infrastructure |
+| Authentication | Local or user-hosted | - | Patient controls their data |
 
-**Abstraction requirement:** The AI layer (transcription + generation) must be abstracted behind an interface so providers can be swapped without re-architecture. This is a hard requirement from Decision 3.
+**AI Abstraction Layer (Required):** The AI layer (transcription + generation) must be abstracted behind an interface supporting three sources: on-device, user-hosted, and optional cloud. This enables swapping without re-architecture and accommodates diverse user capabilities.
 
 ---
 
@@ -141,12 +144,13 @@ Patient Account
 
 | Requirement | Target | Notes |
 |---|---|---|
-| Transcription accuracy | >90% on medical terms | Measured against manual review |
-| Report generation time | <5 minutes | Post-upload processing |
-| Data residency | Japan region | APPI compliance |
+| Transcription accuracy | >90% on medical terms | Measured against manual review; validate in M1 |
+| Report generation time | <5 minutes | On-device processing on target hardware |
+| Data residency | User-controlled | APPI compliant for on-device/user-hosted; Japan-region for cloud fallback |
 | Audio encryption | AES-256 at rest and in transit | Medical audio is highly sensitive |
 | Link expiration | Configurable, default 30 days | Patient controls |
-| Uptime | 99% | Acceptable for early product |
+| Device support | iPhone 14+/flagship Android (2022+) | Older devices use user-hosted or cloud fallback |
+| Uptime | 99% | For user-hosted/cloud components only |
 
 ---
 
@@ -163,7 +167,7 @@ Patient Account
 | Real-time processing | Phase 3+ | Technical complexity, unclear value add |
 | Consent flow design | Phase 2 | Manual verbal consent sufficient for early users |
 | Billing/payments | Phase 2 | Free for initial validation users |
-| On-device transcription | Phase 3+ | Eliminates audio transit, requires model optimization |
+| On-device transcription | Now in scope | Primary approach, eliminates audio transit |
 
 ---
 

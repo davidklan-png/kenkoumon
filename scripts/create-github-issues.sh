@@ -40,45 +40,37 @@ echo "--- Creating milestones ---"
 gh api repos/$REPO/milestones -f title="M1: Experiment Zero Tooling & Execution" -f state=open -f description="Build lightweight scripts to make the manual pipeline repeatable, then execute Experiment Zero.
 
 Timeline: Weeks 1-4
-Gate: accurate + useful = proceed; accurate + not useful = redesign; not accurate = investigate."
-echo "  Created M1"
+Gate: accurate + useful = proceed; accurate + not useful = redesign; not accurate = investigate." 2>/dev/null && echo "  Created M1" || echo "  Milestone 'M1' already exists"
 
 gh api repos/$REPO/milestones -f title="M2: Expanded Validation" -f state=open -f description="Scale from 1 user/1 doctor to 5 users and 3-5 doctors. Stage 1 from docs/VISION.md.
 
 Timeline: Weeks 5-12
-Gate: >70% doctors find useful AND >70% would pay ¥1,500/month = proceed to engineering."
-echo "  Created M2"
+Gate: >70% doctors find useful AND >70% would pay ¥1,500/month = proceed to engineering." 2>/dev/null && echo "  Created M2" || echo "  Milestone 'M2' already exists"
 
 gh api repos/$REPO/milestones -f title="M3: Repository Scaffolding" -f state=open -f description="Set up development environment, finalize tech stack, establish project structure. No feature code.
 
-Timeline: Weeks 13-14"
-echo "  Created M3"
+Timeline: Weeks 13-14" 2>/dev/null && echo "  Created M3" || echo "  Milestone 'M3' already exists"
 
 gh api repos/$REPO/milestones -f title="M4: Core Pipeline — Record, Transcribe, Generate" -f state=open -f description="Features F1, F2, F3. The core value chain: record audio → transcribe Japanese → generate structured report.
 
-Timeline: Weeks 15-19"
-echo "  Created M4"
+Timeline: Weeks 15-19" 2>/dev/null && echo "  Created M4" || echo "  Milestone 'M4' already exists"
 
 gh api repos/$REPO/milestones -f title="M5: Patient Review & Notes (F4)" -f state=open -f description="Patient-facing report viewing and ability to add notes (Section 4). Feature F4.
 
-Timeline: Weeks 19-21"
-echo "  Created M5"
+Timeline: Weeks 19-21" 2>/dev/null && echo "  Created M5" || echo "  Milestone 'M5' already exists"
 
 gh api repos/$REPO/milestones -f title="M6: Secure Sharing & Auth (F5)" -f state=open -f description="Authentication and secure link sharing mechanism. Feature F5.
 
-Timeline: Weeks 21-24"
-echo "  Created M6"
+Timeline: Weeks 21-24" 2>/dev/null && echo "  Created M6" || echo "  Milestone 'M6' already exists"
 
 gh api repos/$REPO/milestones -f title="M7: Session History & Encryption (F6)" -f state=open -f description="Session history (F6), encryption requirements, APPI data residency compliance.
 
-Timeline: Weeks 24-26"
-echo "  Created M7"
+Timeline: Weeks 24-26" 2>/dev/null && echo "  Created M7" || echo "  Milestone 'M7' already exists"
 
 gh api repos/$REPO/milestones -f title="M8: Integration, Testing & Launch" -f state=open -f description="Integrate all features, test end-to-end, add analytics, launch to validation users.
 
 Timeline: Weeks 26-28
-Success: 50+ sessions, >95% accuracy, >60% share rate, >70% retention."
-echo "  Created M8"
+Success: 50+ sessions, >95% accuracy, >60% share rate, >70% retention." 2>/dev/null && echo "  Created M8" || echo "  Milestone 'M8' already exists"
 
 echo ""
 
@@ -101,7 +93,7 @@ echo ""
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 1 issues (Experiment Zero) ---"
 
-gh issue create --repo "$REPO" -m "$M1" \
+gh issue create --repo "$REPO" -m "$M1_TITLE" \
   --label "enhancement" --label "infrastructure" \
   --title "Create Whisper transcription script" \
   --body "## Description
@@ -118,7 +110,7 @@ This is Step 2 of the manual pipeline in \`docs/EXPERIMENT-ZERO.md\`.
 ## References
 - \`docs/EXPERIMENT-ZERO.md\` Step 2"
 
-gh issue create --repo "$REPO" -m "$M1" \
+gh issue create --repo "$REPO" -m "$M1_TITLE" \
   --label "enhancement" --label "infrastructure" \
   --title "Create report generation script" \
   --body "## Description
@@ -137,7 +129,7 @@ Support selecting the LLM provider via a flag or environment variable.
 - \`docs/PROCESSING-PROMPT.md\`
 - \`docs/DOCTOR-REPORT-SPEC.md\`"
 
-gh issue create --repo "$REPO" -m "$M1" \
+gh issue create --repo "$REPO" -m "$M1_TITLE" \
   --label "documentation" \
   --title "Create self-evaluation scorecard template" \
   --body "## Description
@@ -159,7 +151,7 @@ Create a Markdown template (\`docs/SCORECARD-TEMPLATE.md\`) based on the self-ev
 - \`docs/EXPERIMENT-ZERO.md\` Step 4
 - \`docs/DOCTOR-REPORT-SPEC.md\`"
 
-gh issue create --repo "$REPO" -m "$M1" \
+gh issue create --repo "$REPO" -m "$M1_TITLE" \
   --label "enhancement" \
   --title "Create end-to-end pipeline script" \
   --body "## Description
@@ -174,7 +166,7 @@ Create a wrapper script that chains transcription and report generation: audio f
 - Report generation script
 - Scorecard template"
 
-gh issue create --repo "$REPO" -m "$M1" \
+gh issue create --repo "$REPO" -m "$M1_TITLE" \
   --label "research" \
   --title "Execute Experiment Zero — first doctor visit" \
   --body "## Description
@@ -200,7 +192,7 @@ This is the critical validation gate for the entire project.
 ## References
 - \`docs/EXPERIMENT-ZERO.md\`"
 
-gh issue create --repo "$REPO" -m "$M1" \
+gh issue create --repo "$REPO" -m "$M1_TITLE" \
   --label "research" \
   --title "Share report with doctor and record feedback" \
   --body "## Description
@@ -224,7 +216,7 @@ At the next doctor visit, present the generated report (printed or emailed). Use
 ## References
 - \`docs/EXPERIMENT-ZERO.md\` Steps 6-7"
 
-gh issue create --repo "$REPO" -m "$M1" \
+gh issue create --repo "$REPO" -m "$M1_TITLE" \
   --label "documentation" \
   --title "Document Experiment Zero results and prompt tuning" \
   --body "## Description
@@ -255,7 +247,7 @@ echo "  Created 7 issues for M1"
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 2 issues (Expanded Validation) ---"
 
-gh issue create --repo "$REPO" -m "$M2" \
+gh issue create --repo "$REPO" -m "$M2_TITLE" \
   --label "research" \
   --title "Recruit 5 expat testers" \
   --body "## Description
@@ -271,7 +263,7 @@ Provide each tester with the recording script, pipeline tools, and scorecard tem
 ## Dependencies
 - Milestone 1 complete"
 
-gh issue create --repo "$REPO" -m "$M2" \
+gh issue create --repo "$REPO" -m "$M2_TITLE" \
   --label "research" \
   --title "Run pipeline across 10+ sessions" \
   --body "## Description
@@ -290,7 +282,7 @@ Process recordings from the 5 testers (target: 2+ sessions each, 10+ total). Col
 ## Dependencies
 - Testers recruited"
 
-gh issue create --repo "$REPO" -m "$M2" \
+gh issue create --repo "$REPO" -m "$M2_TITLE" \
   --label "research" \
   --title "Collect doctor feedback from 3+ doctors" \
   --body "## Description
@@ -309,7 +301,7 @@ At least 3 different doctors should see and comment on AI-generated reports.
 ## Dependencies
 - Sessions processed"
 
-gh issue create --repo "$REPO" -m "$M2" \
+gh issue create --repo "$REPO" -m "$M2_TITLE" \
   --label "research" \
   --title "Evaluate transcription alternatives" \
   --body "## Description
@@ -330,7 +322,7 @@ Run the same audio files through multiple services and compare accuracy on medic
 ## References
 - \`docs/RISK-REGISTER.md\` RISK-2"
 
-gh issue create --repo "$REPO" -m "$M2" \
+gh issue create --repo "$REPO" -m "$M2_TITLE" \
   --label "research" \
   --title "Evaluate LLM providers for report generation" \
   --body "## Description
@@ -351,7 +343,7 @@ Run the same transcripts through both providers:
 ## References
 - \`docs/DECISIONS-LOG.md\` Decision 3"
 
-gh issue create --repo "$REPO" -m "$M2" \
+gh issue create --repo "$REPO" -m "$M2_TITLE" \
   --label "research" --label "documentation" \
   --title "Initial APPI legal consultation" \
   --body "## Description
@@ -373,7 +365,7 @@ Get a preliminary legal opinion on APPI compliance (budget: ¥200-500K).
 - \`docs/RISK-REGISTER.md\` RISK-5
 - \`docs/ARCHITECTURE.md\` Data Residency section"
 
-gh issue create --repo "$REPO" -m "$M2" \
+gh issue create --repo "$REPO" -m "$M2_TITLE" \
   --label "documentation" \
   --title "Validation phase decision gate" \
   --body "## Description
@@ -403,7 +395,7 @@ echo "  Created 7 issues for M2"
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 3 issues (Repo Scaffolding) ---"
 
-gh issue create --repo "$REPO" -m "$M3" \
+gh issue create --repo "$REPO" -m "$M3_TITLE" \
   --label "research" --label "documentation" \
   --title "Finalize mobile framework decision (React Native vs Flutter)" \
   --body "## Description
@@ -424,7 +416,7 @@ Make the final decision on mobile framework per \`docs/MVP-SPEC.md\`.
 - \`docs/MVP-SPEC.md\` Technical Stack
 - \`docs/DECISIONS-LOG.md\`"
 
-gh issue create --repo "$REPO" -m "$M3" \
+gh issue create --repo "$REPO" -m "$M3_TITLE" \
   --label "infrastructure" \
   --title "Initialize mobile app project" \
   --body "## Description
@@ -444,7 +436,7 @@ Initialize the mobile project using the chosen framework.
 ## Dependencies
 - Framework decision"
 
-gh issue create --repo "$REPO" -m "$M3" \
+gh issue create --repo "$REPO" -m "$M3_TITLE" \
   --label "infrastructure" \
   --title "Set up backend API project" \
   --body "## Description
@@ -461,7 +453,7 @@ Initialize the backend API project (Node.js/Express or Python/FastAPI).
 - Docker build works
 - \`.env.example\` documents all required environment variables"
 
-gh issue create --repo "$REPO" -m "$M3" \
+gh issue create --repo "$REPO" -m "$M3_TITLE" \
   --label "infrastructure" \
   --title "Set up PostgreSQL with initial schema" \
   --body "## Description
@@ -495,7 +487,7 @@ All entity tables include: source_session_id, confidence, patient_confirmed.
 - \`docs/MVP-SPEC.md\` Entity Data Model
 - \`docs/ARCHITECTURE.md\`"
 
-gh issue create --repo "$REPO" -m "$M3" \
+gh issue create --repo "$REPO" -m "$M3_TITLE" \
   --label "infrastructure" \
   --title "Set up CI pipeline" \
   --body "## Description
@@ -513,7 +505,7 @@ Configure GitHub Actions for linting, type checking, unit tests, and build verif
 ## Dependencies
 - Mobile and backend projects exist"
 
-gh issue create --repo "$REPO" -m "$M3" \
+gh issue create --repo "$REPO" -m "$M3_TITLE" \
   --label "enhancement" --label "infrastructure" \
   --title "Create AI service abstraction layer" \
   --body "## Description
@@ -548,7 +540,7 @@ echo "  Created 6 issues for M3"
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 4 issues (Core Pipeline) ---"
 
-gh issue create --repo "$REPO" -m "$M4" \
+gh issue create --repo "$REPO" -m "$M4_TITLE" \
   --label "enhancement" \
   --title "Implement in-app audio recording (F1)" \
   --body "## Description
@@ -575,7 +567,7 @@ Background recording, silence detection, noise cancellation, multi-device.
 ## References
 - \`docs/MVP-SPEC.md\` F1"
 
-gh issue create --repo "$REPO" -m "$M4" \
+gh issue create --repo "$REPO" -m "$M4_TITLE" \
   --label "enhancement" \
   --title "Implement audio upload to backend" \
   --body "## Description
@@ -595,7 +587,7 @@ After recording, upload audio to backend. Create session record with status flow
 ## Dependencies
 - Audio recording, database schema"
 
-gh issue create --repo "$REPO" -m "$M4" \
+gh issue create --repo "$REPO" -m "$M4_TITLE" \
   --label "enhancement" \
   --title "Implement transcription pipeline (F2)" \
   --body "## Description
@@ -621,7 +613,7 @@ uploaded → transcribing → transcribed (or transcription_failed)
 ## References
 - \`docs/MVP-SPEC.md\` F2"
 
-gh issue create --repo "$REPO" -m "$M4" \
+gh issue create --repo "$REPO" -m "$M4_TITLE" \
   --label "enhancement" \
   --title "Implement report generation pipeline (F3)" \
   --body "## Description
@@ -648,7 +640,7 @@ transcribed → generating → complete
 - \`docs/PROCESSING-PROMPT.md\`
 - \`docs/DOCTOR-REPORT-SPEC.md\`"
 
-gh issue create --repo "$REPO" -m "$M4" \
+gh issue create --repo "$REPO" -m "$M4_TITLE" \
   --label "enhancement" \
   --title "Implement processing status polling" \
   --body "## Description
@@ -662,7 +654,7 @@ App polls session status every 10-15s. Shows: uploading → transcribing → gen
 ## Dependencies
 - Pipeline stages exist"
 
-gh issue create --repo "$REPO" -m "$M4" \
+gh issue create --repo "$REPO" -m "$M4_TITLE" \
   --label "infrastructure" \
   --title "Add processing time monitoring" \
   --body "## Description
@@ -685,7 +677,7 @@ echo "  Created 6 issues for M4"
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 5 issues (Patient Review) ---"
 
-gh issue create --repo "$REPO" -m "$M5" \
+gh issue create --repo "$REPO" -m "$M5_TITLE" \
   --label "enhancement" --label "design" \
   --title "Build report viewing screen" \
   --body "## Description
@@ -710,7 +702,7 @@ Include header (date, patient, doctor) and disclaimer footer. Scannable in 2-3 m
 ## References
 - \`docs/DOCTOR-REPORT-SPEC.md\`"
 
-gh issue create --repo "$REPO" -m "$M5" \
+gh issue create --repo "$REPO" -m "$M5_TITLE" \
   --label "enhancement" \
   --title "Implement patient notes editing (Section 4)" \
   --body "## Description
@@ -729,7 +721,7 @@ Per \`docs/MVP-SPEC.md\` F4: patient can add notes in Section 4 (患者からの
 ## Dependencies
 - Report viewing screen"
 
-gh issue create --repo "$REPO" -m "$M5" \
+gh issue create --repo "$REPO" -m "$M5_TITLE" \
   --label "enhancement" --label "design" \
   --title "Implement share now vs review later flow" \
   --body "## Description
@@ -752,7 +744,7 @@ Minimum viable workflow: stop recording → tap process and share → done.
 - \`docs/DECISIONS-LOG.md\` Decision 4
 - \`docs/RISK-REGISTER.md\` RISK-7"
 
-gh issue create --repo "$REPO" -m "$M5" \
+gh issue create --repo "$REPO" -m "$M5_TITLE" \
   --label "enhancement" --label "design" \
   --title "Build extracted entities display" \
   --body "## Description
@@ -776,7 +768,7 @@ echo "  Created 4 issues for M5"
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 6 issues (Secure Sharing & Auth) ---"
 
-gh issue create --repo "$REPO" -m "$M6" \
+gh issue create --repo "$REPO" -m "$M6_TITLE" \
   --label "infrastructure" --label "enhancement" \
   --title "Implement patient authentication" \
   --body "## Description
@@ -801,7 +793,7 @@ Email/password auth with JWT sessions.
 - \`docs/MVP-SPEC.md\` Technical Stack
 - \`docs/ARCHITECTURE.md\` Security"
 
-gh issue create --repo "$REPO" -m "$M6" \
+gh issue create --repo "$REPO" -m "$M6_TITLE" \
   --label "enhancement" \
   --title "Implement secure link generation (F5)" \
   --body "## Description
@@ -823,7 +815,7 @@ Per \`docs/MVP-SPEC.md\` F5: generate unique, expiring secure link.
 ## References
 - \`docs/MVP-SPEC.md\` F5"
 
-gh issue create --repo "$REPO" -m "$M6" \
+gh issue create --repo "$REPO" -m "$M6_TITLE" \
   --label "enhancement" --label "design" \
   --title "Build public report viewing page (web)" \
   --body "## Description
@@ -848,7 +840,7 @@ Web page at share link URL — this is what the doctor sees.
 ## References
 - \`docs/DECISIONS-LOG.md\` Decision 6"
 
-gh issue create --repo "$REPO" -m "$M6" \
+gh issue create --repo "$REPO" -m "$M6_TITLE" \
   --label "enhancement" --label "infrastructure" \
   --title "Implement link expiration and revocation" \
   --body "## Description
@@ -867,7 +859,7 @@ Enforce link expiration and provide link management.
 ## Dependencies
 - Secure links and public page"
 
-gh issue create --repo "$REPO" -m "$M6" \
+gh issue create --repo "$REPO" -m "$M6_TITLE" \
   --label "enhancement" \
   --title "Implement share delivery options" \
   --body "## Description
@@ -892,7 +884,7 @@ echo "  Created 5 issues for M6"
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 7 issues (Session History & Encryption) ---"
 
-gh issue create --repo "$REPO" -m "$M7" \
+gh issue create --repo "$REPO" -m "$M7_TITLE" \
   --label "enhancement" --label "design" \
   --title "Build session history screen (F6)" \
   --body "## Description
@@ -914,7 +906,7 @@ Search, filtering, longitudinal analysis, data export.
 ## Dependencies
 - Auth and report view"
 
-gh issue create --repo "$REPO" -m "$M7" \
+gh issue create --repo "$REPO" -m "$M7_TITLE" \
   --label "infrastructure" --label "enhancement" \
   --title "Implement AES-256 encryption at rest" \
   --body "## Description
@@ -938,7 +930,7 @@ Per \`docs/ARCHITECTURE.md\`: AES-256 at rest for audio, transcripts, and report
 - \`docs/ARCHITECTURE.md\` Security
 - \`docs/MVP-SPEC.md\` NFRs"
 
-gh issue create --repo "$REPO" -m "$M7" \
+gh issue create --repo "$REPO" -m "$M7_TITLE" \
   --label "infrastructure" \
   --title "Configure TLS 1.3 transport security" \
   --body "## Description
@@ -958,7 +950,7 @@ Per \`docs/ARCHITECTURE.md\`: TLS 1.3 in transit.
 ## Dependencies
 - Backend exists"
 
-gh issue create --repo "$REPO" -m "$M7" \
+gh issue create --repo "$REPO" -m "$M7_TITLE" \
   --label "infrastructure" \
   --title "Configure Japan-region deployment" \
   --body "## Description
@@ -982,7 +974,7 @@ Per APPI compliance: all data must reside in Japan region.
 - \`docs/ARCHITECTURE.md\` Data Residency
 - \`docs/MVP-SPEC.md\` NFRs"
 
-gh issue create --repo "$REPO" -m "$M7" \
+gh issue create --repo "$REPO" -m "$M7_TITLE" \
   --label "enhancement" \
   --title "Implement patient-controlled audio deletion" \
   --body "## Description
@@ -1009,7 +1001,7 @@ echo "  Created 5 issues for M7"
 # ─────────────────────────────────────────────
 echo "--- Creating Milestone 8 issues (Integration & Launch) ---"
 
-gh issue create --repo "$REPO" -m "$M8" \
+gh issue create --repo "$REPO" -m "$M8_TITLE" \
   --label "testing" \
   --title "End-to-end integration testing" \
   --body "## Description
@@ -1030,7 +1022,7 @@ Test the complete flow: Record → Process → Review → Share → Doctor views
 ## Dependencies
 - Milestones 4-7 complete"
 
-gh issue create --repo "$REPO" -m "$M8" \
+gh issue create --repo "$REPO" -m "$M8_TITLE" \
   --label "documentation" --label "design" \
   --title "Add disclaimers and legal text" \
   --body "## Description
@@ -1053,7 +1045,7 @@ Add required disclaimers throughout app and shared reports.
 - \`docs/DOCTOR-REPORT-SPEC.md\` footer
 - \`docs/RISK-REGISTER.md\` RISK-3"
 
-gh issue create --repo "$REPO" -m "$M8" \
+gh issue create --repo "$REPO" -m "$M8_TITLE" \
   --label "infrastructure" \
   --title "Implement validation metrics tracking" \
   --body "## Description
@@ -1077,7 +1069,7 @@ Track MVP validation metrics from \`docs/MVP-SPEC.md\`.
 ## Dependencies
 - Pipeline and sharing exist"
 
-gh issue create --repo "$REPO" -m "$M8" \
+gh issue create --repo "$REPO" -m "$M8_TITLE" \
   --label "testing" --label "enhancement" \
   --title "Error handling and edge case hardening" \
   --body "## Description
@@ -1091,7 +1083,7 @@ Handle: upload failures, API timeouts, poor audio quality, network loss, stuck s
 ## Dependencies
 - Pipeline exists"
 
-gh issue create --repo "$REPO" -m "$M8" \
+gh issue create --repo "$REPO" -m "$M8_TITLE" \
   --label "infrastructure" \
   --title "Prepare TestFlight/internal testing build" \
   --body "## Description
@@ -1114,7 +1106,7 @@ Prepare app for distribution to 10-20 validation users.
 ## Dependencies
 - Integration testing passes"
 
-gh issue create --repo "$REPO" -m "$M8" \
+gh issue create --repo "$REPO" -m "$M8_TITLE" \
   --label "research" \
   --title "Launch to validation users and begin metric collection" \
   --body "## Description

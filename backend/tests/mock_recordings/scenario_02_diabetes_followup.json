@@ -1,0 +1,139 @@
+{
+  "id": "mock_002",
+  "scenario": "chronic_condition_followup",
+  "title": "糖尿病定期検診 - Diabetes Regular Checkup",
+  "language": "ja",
+  "duration_seconds": 580,
+  "participants": {
+    "doctor": {
+      "name": "佐藤先生",
+      "specialty": "内分泌・糖尿病内科",
+      "hospital": "みらい糖尿病クリニック"
+    },
+    "patient": {
+      "name": "鈴木花子",
+      "age": 58,
+      "gender": "female"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "鈴木さん、こんにちは。今日は3ヶ月ぶりの定期検診ですね。",
+      "timestamp_start": 0,
+      "timestamp_end": 5
+    },
+    {
+      "speaker": "patient",
+      "text": "はい、先生。お世話になります。",
+      "timestamp_start": 5,
+      "timestamp_end": 8
+    },
+    {
+      "speaker": "doctor",
+      "text": "HbA1cの結果を見ましょう。前回は7.2%でしたが、今回は6.8%まで改善しています。素晴らしいですね。",
+      "timestamp_start": 8,
+      "timestamp_end": 20
+    },
+    {
+      "speaker": "patient",
+      "text": "よかった。食事制限を頑張りました。",
+      "timestamp_start": 20,
+      "timestamp_end": 24
+    },
+    {
+      "speaker": "doctor",
+      "text": "その調子です。空腹時血糖値も110mg/dLと良好です。目標の7.0%未満に近づいています。",
+      "timestamp_start": 24,
+      "timestamp_end": 34
+    },
+    {
+      "speaker": "patient",
+      "text": "メトホルミンは今のままでいいですか？",
+      "timestamp_start": 34,
+      "timestamp_end": 38
+    },
+    {
+      "speaker": "doctor",
+      "text": "はい、メトホルミン500mgを1日2回、朝夕食後のままで続けてください。",
+      "timestamp_start": 38,
+      "timestamp_end": 46
+    },
+    {
+      "speaker": "doctor",
+      "text": "ただ、微量アルブミン尿が少し気になります。腎臓の状態を詳しく見るため、追加検査をしましょう。",
+      "timestamp_start": 46,
+      "timestamp_end": 56
+    },
+    {
+      "speaker": "patient",
+      "text": "腎臓に問題があるんですか？",
+      "timestamp_start": 56,
+      "timestamp_end": 59
+    },
+    {
+      "speaker": "doctor",
+      "text": "まだ早期の段階です。血圧のコントロールと血糖管理を続ければ、進行を防げます。",
+      "timestamp_start": 59,
+      "timestamp_end": 68
+    },
+    {
+      "speaker": "doctor",
+      "text": "ARB系の降圧剤、オルメサルタン10mgを追加しましょう。腎臓を保護する効果もあります。",
+      "timestamp_start": 68,
+      "timestamp_end": 78
+    },
+    {
+      "speaker": "patient",
+      "text": "分かりました。朝飲めばいいですか？",
+      "timestamp_start": 78,
+      "timestamp_end": 82
+    },
+    {
+      "speaker": "doctor",
+      "text": "はい、朝1回1錠です。副作用は少ないですが、めまいや立ちくらみがあれば連絡してください。",
+      "timestamp_start": 82,
+      "timestamp_end": 92
+    },
+    {
+      "speaker": "doctor",
+      "text": "次回は1ヶ月後にしましょう。血液検査と尿検査を予約しておきます。",
+      "timestamp_start": 92,
+      "timestamp_end": 100
+    },
+    {
+      "speaker": "patient",
+      "text": "ありがとうございました。",
+      "timestamp_start": 100,
+      "timestamp_end": 103
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "糖尿病定期検診",
+    "findings": [
+      "HbA1c 6.8%（前回7.2%から改善）",
+      "空腹時血糖値 110mg/dL",
+      "微量アルブミン尿陽性（早期腎症疑い）"
+    ],
+    "recommendations": [
+      "食事療法・運動療法の継続",
+      "血糖値7.0%未満を目標",
+      "腎機能定期モニタリング"
+    ],
+    "prescriptions": [
+      {
+        "name": "メトホルミン",
+        "dosage": "500mg",
+        "frequency": "1日2回、朝夕食後",
+        "note": "継続"
+      },
+      {
+        "name": "オルメサルタン",
+        "dosage": "10mg",
+        "frequency": "朝1回1錠",
+        "note": "新規処方・腎保護目的"
+      }
+    ],
+    "follow_up": "1ヶ月後・血液検査・尿検査予定"
+  }
+}
