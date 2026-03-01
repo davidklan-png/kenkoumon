@@ -127,6 +127,60 @@ class APIService {
 
         return try decoder.decode(Session.self, from: data)
     }
+
+    // MARK: - Health Document Upload
+
+    func uploadHealthDocument(
+        fileData: Data,
+        fileName: String,
+        request: HealthDocumentCreateRequest
+    ) async throws -> HealthDocument {
+        let url = URL(string: baseURL + "/api/\(APIConfig.apiVersion)/health-documents")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+
+        if let token = KeychainService.shared.authToken {
+            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+
+        let boundary = "Boundary-\(UUID().uuidString)"
+        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        var body = Data()
+
+        // Add metadata fields
+        if let category = request.category {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"category\"\r\n\r\n".data(using: .utf8)!)
+            body.append("\(category)\r\n".data(using: .utf8)!)
+        }
+
+        if let docDate = request.documentDate {
+            let dateString = ISO8601DateFormatter().string(from: docDate)
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"document_date\"\r\n\r\n".data(using: .utf8)!)
+            body.append("\(dateString)\r\n".data(using: .utf8)!)
+        }
+
+        // Add file
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: \(request.fileType)\r\n\r\n".data(using: .utf8)!)
+        body.append(fileData)
+        body.append("\r\n".data(using: .utf8)!)
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+
+        urlRequest.httpBody = body
+
+        let (data, response) = try await session.data(for: urlRequest)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else {
+            throw APIError.uploadFailed
+        }
+
+        return try decoder.decode(HealthDocument.self, from: data)
+    }
 }
 
 // MARK: - Errors

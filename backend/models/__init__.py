@@ -47,6 +47,16 @@ class InstructionCategory(str, enum.Enum):
     REFERRAL = "referral"
 
 
+class DocumentCategory(str, enum.Enum):
+    """Health document category."""
+    HEALTH_CHECKUP = "health_checkup"
+    MEDICATION = "medication"
+    VACCINATION = "vaccination"
+    LAB_RESULTS = "lab_results"
+    MEDICAL_CERTIFICATE = "medical_certificate"
+    OTHER = "other"
+
+
 class Patient(Base):
     """Patient account."""
     __tablename__ = "patients"
@@ -64,6 +74,7 @@ class Patient(Base):
     medications = relationship("Medication", back_populates="patient", cascade="all, delete-orphan")
     conditions = relationship("Condition", back_populates="patient", cascade="all, delete-orphan")
     instructions = relationship("Instruction", back_populates="patient", cascade="all, delete-orphan")
+    health_documents = relationship("HealthDocument", back_populates="patient", cascade="all, delete-orphan")
 
 
 class Session(Base):
@@ -183,3 +194,24 @@ class ShareLink(Base):
 
     # Relationships
     session = relationship("Session", back_populates="share_links")
+
+
+class HealthDocument(Base):
+    """Health document imported from MyNumber Portal or other sources."""
+    __tablename__ = "health_documents"
+
+    id = Column(String, primary_key=True)
+    patient_id = Column(String, ForeignKey("patients.id"), nullable=False)
+    file_name = Column(String, nullable=False)
+    file_type = Column(String, nullable=False)  # MIME type
+    file_path = Column(String)  # Encrypted path to stored file
+    file_size = Column(Integer)  # Size in bytes
+    upload_date = Column(DateTime, default=datetime.utcnow, nullable=False)
+    document_date = Column(DateTime)  # Date of the document (e.g., checkup date)
+    category = Column(String, default=DocumentCategory.OTHER.value)
+    summary = Column(Text)  # Patient notes or AI summary
+    tags = Column(String)  # Comma-separated tags
+    extracted_data = Column(Text)  # JSON string of extracted health data
+
+    # Relationships
+    patient = relationship("Patient", back_populates="health_documents")

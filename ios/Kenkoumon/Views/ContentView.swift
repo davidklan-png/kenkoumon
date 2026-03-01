@@ -23,6 +23,7 @@ struct ContentView: View {
 
 struct MainTabView: View {
     @State private var selectedTab = 0
+    @StateObject private var documentManager = HealthDocumentManager()
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -40,12 +41,20 @@ struct MainTabView: View {
                 }
                 .tag(1)
 
+            HealthDataView()
+                .tabItem {
+                    Image(systemName: "heart.text.square")
+                    Text("健康データ")
+                }
+                .tag(2)
+                .environmentObject(documentManager)
+
             SettingsView()
                 .tabItem {
                     Image(systemName: "gearshape")
                     Text("設定")
                 }
-                .tag(2)
+                .tag(3)
         }
         .accentColor(.blue)
     }

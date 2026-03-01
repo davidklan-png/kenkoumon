@@ -199,3 +199,40 @@ class PublicReportResponse(BaseModel):
     report_ja: Optional[str] = None
     patient_notes: Optional[str] = None
     entities: ReportEntity
+
+
+# =============================================================================
+# Health Document Schemas
+# =============================================================================
+
+class HealthDocumentCreateRequest(BaseModel):
+    """Request to create health document."""
+    file_name: str
+    file_type: str
+    category: Optional[str] = None
+    document_date: Optional[datetime] = None
+
+
+class HealthDocumentUpdateRequest(BaseModel):
+    """Request to update health document."""
+    category: Optional[str] = None
+    summary: Optional[str] = None
+    tags: Optional[List[str]] = None
+
+
+class HealthDocumentResponse(BaseModel):
+    """Health document response."""
+    id: str
+    patient_id: str
+    file_name: str
+    file_type: str
+    upload_date: datetime
+    document_date: Optional[datetime] = None
+    category: str
+    summary: Optional[str] = None
+    tags: List[str] = []
+    extracted_data: Optional[dict] = None
+
+    class Config:
+        from_attributes = True
+

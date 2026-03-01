@@ -13,7 +13,7 @@ import uvicorn
 
 from core.config import settings
 from core.database import engine, SessionLocal, get_db
-from api import auth, sessions, reports, health
+from api import auth, sessions, reports, health, health_documents
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -47,6 +47,7 @@ app.include_router(health.router, tags=["Health"])
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
 app.include_router(sessions.router, prefix="/api/v1/sessions", tags=["Sessions"])
 app.include_router(reports.router, prefix="/api/v1/reports", tags=["Reports"])
+app.include_router(health_documents.router, prefix="/api/v1/health-documents", tags=["Health Documents"])
 
 if __name__ == "__main__":
     uvicorn.run(
