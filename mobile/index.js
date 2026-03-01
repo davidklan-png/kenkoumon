@@ -1,8 +1,5 @@
 /**
- * React Native entry point
+ * React Native entry point for Expo Router
  */
 
-import { registerRootComponent } from 'expo';
-import App from './app/_layout';
-
-registerRootComponent(() => App);
+import 'expo-router/entry';
