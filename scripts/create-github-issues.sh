@@ -75,26 +75,17 @@ Success: 50+ sessions, >95% accuracy, >60% share rate, >70% retention." 2>/dev/n
 echo ""
 
 # ─────────────────────────────────────────────
-# Milestone titles (use full title with gh issue create -m)
+# Milestone titles (gh issue create -m takes the title, not the number)
 # ─────────────────────────────────────────────
-M1_TITLE="M1: Experiment Zero Tooling & Execution"
-M2_TITLE="M2: Expanded Validation"
-M3_TITLE="M3: Repository Scaffolding"
-M4_TITLE="M4: Core Pipeline — Record, Transcribe, Generate"
-M5_TITLE="M5: Patient Review & Notes (F4)"
-M6_TITLE="M6: Secure Sharing & Auth (F5)"
-M7_TITLE="M7: Session History & Encryption (F6)"
-M8_TITLE="M8: Integration, Testing & Launch"
+M1="M1: Experiment Zero Tooling & Execution"
+M2="M2: Expanded Validation"
+M3="M3: Repository Scaffolding"
+M4="M4: Core Pipeline — Record, Transcribe, Generate"
+M5="M5: Patient Review & Notes (F4)"
+M6="M6: Secure Sharing & Auth (F5)"
+M7="M7: Session History & Encryption (F6)"
+M8="M8: Integration, Testing & Launch"
 
-echo "Using milestone titles:"
-echo "  M1: $M1_TITLE"
-echo "  M2: $M2_TITLE"
-echo "  M3: $M3_TITLE"
-echo "  M4: $M4_TITLE"
-echo "  M5: $M5_TITLE"
-echo "  M6: $M6_TITLE"
-echo "  M7: $M7_TITLE"
-echo "  M8: $M8_TITLE"
 echo ""
 
 # ─────────────────────────────────────────────
