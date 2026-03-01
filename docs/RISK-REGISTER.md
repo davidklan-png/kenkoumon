@@ -30,20 +30,22 @@
 **Severity:** High
 **Likelihood:** Medium
 
-**Description:** Japanese medical consultations involve specialized terminology, mumbling, cross-talk, and variable audio quality in clinic environments. Current transcription models may not achieve sufficient accuracy for medical entity extraction.
+**Description:** Japanese medical consultations involve specialized terminology, mumbling, cross-talk, and variable audio quality in clinic environments. On-device or user-hosted models may not achieve sufficient accuracy for medical entity extraction compared to cloud APIs.
 
 **Signals:**
 - Medication names consistently misspelled or missed
 - Key instructions lost or garbled
 - Accuracy below 80% on medical terms across multiple recordings
+- On-device models underperform compared to cloud APIs
 
 **Mitigation:**
-- Test multiple transcription services/models during Experiment Zero
-- Japanese-specialized models exist (e.g., ReazonSpeech) — evaluate alternatives to Whisper
-- Fine-tuning on medical Japanese audio is possible with sufficient data
+- Test multiple transcription sources during Experiment Zero (on-device, user-hosted, cloud)
+- Japanese-specialized models exist (e.g., ReazonSpeech) — evaluate alternatives
+- Fine-tuning on-device models on medical Japanese audio if gap identified
 - Post-processing correction layer using medical terminology dictionaries
+- Cloud fallback as option for users who prioritize accuracy over privacy
 
-**Kill criteria:** If no available transcription solution achieves >85% accuracy on medical terms after optimization, the recording-based approach may not be viable. Consider: manual transcript correction by patient as interim step.
+**Kill criteria:** If no available transcription solution achieves >85% accuracy on medical terms after optimization (including cloud fallback), the recording-based approach may not be viable.
 
 ---
 
@@ -96,23 +98,22 @@
 
 ### RISK-5: APPI Compliance Blocks Production Launch
 
-**Severity:** High
-**Likelihood:** Medium
+**Severity:** Medium (reduced from High)
+**Likelihood:** Low-Medium (reduced from Medium)
 
-**Description:** Japan's Act on the Protection of Personal Information (APPI), as amended in 2022, has strict requirements for medical data handling. Audio recordings of medical consultations are among the most sensitive data categories. Compliance requirements may be more onerous than anticipated.
+**Description:** Japan's Act on the Protection of Personal Information (APPI) has strict requirements for medical data handling. On-device and user-hosted processing significantly simplify compliance since data never leaves patient control.
 
 **Signals:**
-- Legal counsel advises that the data handling approach requires significant restructuring
-- Data residency requirements eliminate preferred cloud providers
-- Consent requirements exceed what the simple verbal approach supports
+- Legal counsel advises unexpected requirements for on-device processing
+- Device export controls or encryption regulations create barriers
 
 **Mitigation:**
-- Get preliminary legal opinion early (¥200-500K investment) — recommended in 30-day validation
-- Use Japan-region cloud services from day one (Azure Japan East, AWS Tokyo)
+- Get preliminary legal opinion early (¥200-500K budget) — recommended in M2
+- **Primary defense:** On-device/user-hosted processing means data stays with patient
+- For cloud fallback (if offered): Use Japan-region services only (Azure Japan East, AWS Tokyo)
 - Patient-owned data model aligns with APPI's direction toward individual data rights
-- Audio deletion after transcription reduces exposure
 
-**Contingency:** If APPI requirements are prohibitive for cloud processing, accelerate on-device transcription roadmap.
+**Contingency:** If APPI requirements are prohibitive even for on-device processing, focus on user-hosted option where patient maintains full control of infrastructure location.
 
 ---
 
@@ -161,19 +162,32 @@
 
 ## Monitoring Risks (Watch but Don't Act Yet)
 
-### RISK-8: Medical Association Backlash
+### RISK-8: On-Device Performance Issues
+
+**Likelihood:** Medium
+**Trigger:** Users report excessive battery drain, overheating, or slow processing on target devices
+
+**Description:** On-device AI models (Whisper.cpp, Llama.cpp) are computationally intensive. Users on older devices may experience poor battery life, long processing times, or device overheating.
+
+**Action if triggered:**
+- Recommend user-hosted option for affected users
+- Optimize model quantization and batching
+- Expand cloud fallback availability
+- Consider raising minimum device requirements
+
+### RISK-9: Medical Association Backlash
 
 **Likelihood:** Low in Japan (patient recording is culturally less confrontational than in US)
 **Trigger:** Media coverage of AI-generated medical reports causing concern among physician groups
 **Action if triggered:** Proactive engagement with medical associations. Frame as patient communication tool, not clinical oversight.
 
-### RISK-9: Audio Quality in Clinic Environments
+### RISK-10: Audio Quality in Clinic Environments
 
 **Likelihood:** Medium
 **Trigger:** Consistent transcription failures due to background noise, distance from doctor, air conditioning, etc.
 **Action if triggered:** Provide recording best practices in-app. Test external microphone recommendations. Consider noise-reduction preprocessing.
 
-### RISK-10: Cultural Resistance from Japanese Patients (Expansion Risk)
+### RISK-11: Cultural Resistance from Japanese Patients (Expansion Risk)
 
 **Likelihood:** Medium (for expansion beyond expats to Japanese patients)
 **Trigger:** Japanese patients express discomfort with recording or AI analysis of medical conversations
@@ -185,8 +199,8 @@
 
 | Milestone | Risks to Reassess |
 |---|---|
-| After Experiment Zero | RISK-2 (transcription accuracy), RISK-3 (report accuracy) |
-| After 5-user validation | RISK-1 (doctor resistance), RISK-7 (workflow dropout) |
-| Before MVP launch | RISK-5 (APPI compliance) |
+| After Experiment Zero | RISK-2 (transcription accuracy), RISK-3 (report accuracy), RISK-8 (on-device performance) |
+| After 5-user validation | RISK-1 (doctor resistance), RISK-7 (workflow dropout), RISK-8 (on-device performance) |
+| Before MVP launch | RISK-5 (APPI compliance), RISK-8 (on-device performance) |
 | At 50 subscribers | RISK-4 (willingness to pay), RISK-7 (workflow dropout) |
-| At 12 months | RISK-6 (competitive response), RISK-8 (medical association) |
+| At 12 months | RISK-6 (competitive response), RISK-9 (medical association) |

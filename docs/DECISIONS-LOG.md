@@ -14,9 +14,15 @@ All architectural decisions made during initial design, with rationale and impac
 **Decision:** Patient has full control. Doctor interprets at discretion.
 **Impact:** All architecture is patient-centric. No clinic/doctor accounts. More complex consent flows but enables network effect.
 
-### Decision 3: Build vs. Buy AI Stack
-**Decision:** POC with available tech (Whisper, Claude/GPT-4). Adjust for privacy/residency later.
-**Impact:** Zero infrastructure for Experiment Zero. Must abstract AI layer for future swaps. Data residency constraint for production.
+### Decision 3: AI Stack — User-Controlled, Cloud-Optional
+**Decision:** On-device or user-hosted AI as primary. Cloud APIs as optional fallback only.
+**Impact:**
+- Eliminates ongoing API costs for most users
+- Simplifies APPI compliance (user-controlled = no data residency requirements)
+- Reduces vendor lock-in
+- Requires device performance targeting (iPhone 14+/flagship Android)
+- Requires AI abstraction layer for multiple sources
+- **Supersedes original Decision 3 which was cloud-first with abstraction layer**
 
 ### Decision 4: Processing Timing
 **Decision:** Patient chooses when to process and release. Options: immediate send or review-then-send.
