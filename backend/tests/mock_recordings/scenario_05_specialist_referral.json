@@ -1,0 +1,152 @@
+{
+  "id": "mock_005",
+  "scenario": "specialist_referral",
+  "title": "専門医紹介 - Specialist Referral",
+  "language": "ja",
+  "duration_seconds": 480,
+  "participants": {
+    "doctor": {
+      "name": "渡辺先生",
+      "specialty": "循環器内科",
+      "hospital": "東京中央病院"
+    },
+    "patient": {
+      "name": "木村健二",
+      "age": 52,
+      "gender": "male"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "木村さん、先日の検査結果が出ました。心電図で少し異常が見つかりました。",
+      "timestamp_start": 0,
+      "timestamp_end": 8
+    },
+    {
+      "speaker": "patient",
+      "text": "異常と言いますと？",
+      "timestamp_start": 8,
+      "timestamp_end": 10
+    },
+    {
+      "speaker": "doctor",
+      "text": "ST部分の低下が見られます。心臓の筋肉への血流が不足している可能性があります。",
+      "timestamp_start": 10,
+      "timestamp_end": 20
+    },
+    {
+      "speaker": "patient",
+      "text": "狭心症でしょうか？",
+      "timestamp_start": 20,
+      "timestamp_end": 23
+    },
+    {
+      "speaker": "doctor",
+      "text": "その可能性があります。詳しく調べるため、循環器専門の山田先生を紹介します。",
+      "timestamp_start": 23,
+      "timestamp_end": 32
+    },
+    {
+      "speaker": "doctor",
+      "text": "心臓カテーテル検査を受けていただくことになるでしょう。",
+      "timestamp_start": 32,
+      "timestamp_end": 38
+    },
+    {
+      "speaker": "patient",
+      "text": "入院が必要ですか？",
+      "timestamp_start": 38,
+      "timestamp_end": 41
+    },
+    {
+      "speaker": "doctor",
+      "text": "検査だけなら1日入院で大丈夫です。もし治療が必要になれば、少し長くなるかもしれません。",
+      "timestamp_start": 41,
+      "timestamp_end": 52
+    },
+    {
+      "speaker": "doctor",
+      "text": "その間、アスピリン100mgとニトログリセリンの舌下錠を処方します。",
+      "timestamp_start": 52,
+      "timestamp_end": 60
+    },
+    {
+      "speaker": "patient",
+      "text": "ニトログリセリンはいつ使えばいいですか？",
+      "timestamp_start": 60,
+      "timestamp_end": 64
+    },
+    {
+      "speaker": "doctor",
+      "text": "胸が痛くなったら、すぐに1錠舌の下に入れてください。5分で効いてきます。",
+      "timestamp_start": 64,
+      "timestamp_end": 74
+    },
+    {
+      "speaker": "doctor",
+      "text": "もし1錠で治まらない場合は、5分待ってもう1錠。3錠まで試してダメなら救急車を呼んでください。",
+      "timestamp_start": 74,
+      "timestamp_end": 86
+    },
+    {
+      "speaker": "patient",
+      "text": "分かりました。緊急時の対応も教えていただきありがとうございます。",
+      "timestamp_start": 86,
+      "timestamp_end": 92
+    },
+    {
+      "speaker": "doctor",
+      "text": "紹紹介状を書きますので、できるだけ早めに山田先生の診察を受けてください。",
+      "timestamp_start": 92,
+      "timestamp_end": 100
+    },
+    {
+      "speaker": "doctor",
+      "text": "激しい運動は避けて、ストレスを溜めないようにしてくださいね。",
+      "timestamp_start": 100,
+      "timestamp_end": 108
+    },
+    {
+      "speaker": "patient",
+      "text": "はい、ありがとうございました。",
+      "timestamp_start": 108,
+      "timestamp_end": 112
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "心電図異常の精査",
+    "findings": [
+      "心電図ST低下あり",
+      "心筋虚血の可能性",
+      "狭心症疑い"
+    ],
+    "recommendations": [
+      "循環器専門医への早期受診",
+      "激しい運動を避ける",
+      "ストレス軽減",
+      "胸痛時は緊急対応（ニトログリセリン使用）"
+    ],
+    "prescriptions": [
+      {
+        "name": "アスピリン",
+        "dosage": "100mg",
+        "frequency": "朝1回",
+        "note": "抗血小板療法"
+      },
+      {
+        "name": "ニトログリセリン舌下錠",
+        "dosage": "0.3mg",
+        "frequency": "胸痛時頓用",
+        "note": "5分ごとに最大3錠・効かなければ救急"
+      }
+    ],
+    "referral": {
+      "specialist": "山田先生",
+      "specialty": "循環器内科",
+      "facility": "東京中央病院",
+      "expected_procedure": "心臓カテーテル検査（1日入院予定）"
+    },
+    "follow_up": "専門医受診後・検査結果により治療方針決定"
+  }
+}

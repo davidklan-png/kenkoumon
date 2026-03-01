@@ -1,0 +1,95 @@
+{
+  "id": "mock_001",
+  "scenario": "general_checkup",
+  "title": "一般健康診断 - General Health Checkup",
+  "language": "ja",
+  "duration_seconds": 420,
+  "participants": {
+    "doctor": {
+      "name": "田中先生",
+      "specialty": "内科",
+      "hospital": "東京中央クリニック"
+    },
+    "patient": {
+      "name": "山田太郎",
+      "age": 45,
+      "gender": "male"
+    }
+  },
+  "transcript": [
+    {
+      "speaker": "doctor",
+      "text": "おはようございます、山田さん。今日は健康診断の結果についてお話ししましょう。",
+      "timestamp_start": 0,
+      "timestamp_end": 5
+    },
+    {
+      "speaker": "patient",
+      "text": "よろしくお願いします。何か気になるところはありますか？",
+      "timestamp_start": 5,
+      "timestamp_end": 9
+    },
+    {
+      "speaker": "doctor",
+      "text": "血圧が少し高めですね。上の血圧が135、下が85です。正常値の上限ギリギリです。",
+      "timestamp_start": 9,
+      "timestamp_end": 18
+    },
+    {
+      "speaker": "patient",
+      "text": "そうですか。食事には気をつけているんですが。",
+      "timestamp_start": 18,
+      "timestamp_end": 22
+    },
+    {
+      "speaker": "doctor",
+      "text": "塩分摂取量を減らすことをお勧めします。1日6グラム以下を目指してください。",
+      "timestamp_start": 22,
+      "timestamp_end": 30
+    },
+    {
+      "speaker": "doctor",
+      "text": "あと、コレステロール値も少し高めです。LDLコレステロールが140mg/dLです。",
+      "timestamp_start": 30,
+      "timestamp_end": 38
+    },
+    {
+      "speaker": "patient",
+      "text": "運動を増やした方がいいですか？",
+      "timestamp_start": 38,
+      "timestamp_end": 41
+    },
+    {
+      "speaker": "doctor",
+      "text": "はい、1日30分程度の有酸素運動を週3回以上行うことをお勧めします。ウォーキングでも大丈夫です。",
+      "timestamp_start": 41,
+      "timestamp_end": 52
+    },
+    {
+      "speaker": "doctor",
+      "text": "3ヶ月後に再検査しましょう。その間、生活習慣を改善してください。",
+      "timestamp_start": 52,
+      "timestamp_end": 58
+    },
+    {
+      "speaker": "patient",
+      "text": "分かりました。ありがとうございました。",
+      "timestamp_start": 58,
+      "timestamp_end": 62
+    }
+  ],
+  "expected_summary": {
+    "chief_complaint": "健康診断結果の確認",
+    "findings": [
+      "血圧上135/下85 mmHg（正常上限）",
+      "LDLコレステロール 140mg/dL（高め）"
+    ],
+    "recommendations": [
+      "塩分摂取量を1日6g以下に",
+      "有酸素運動30分/日、週3回以上",
+      "3ヶ月後に再検査"
+    ],
+    "prescriptions": [],
+    "follow_up": "3ヶ月後再検査"
+  }
+}
