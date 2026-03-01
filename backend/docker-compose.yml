@@ -1,0 +1,33 @@
+# Kenkoumon Backend - Docker Compose
+
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./kenkoumon.db:/app/kenkoumon.db
+    environment:
+      - DATABASE_URL=sqlite:///kenkoumon.db
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - DEFAULT_TRANSCRIPTION_SOURCE=${DEFAULT_TRANSCRIPTION_SOURCE:-cloud}
+      - DEFAULT_LLM_SOURCE=${DEFAULT_LLM_SOURCE:-cloud}
+      - OLLAMA_URL=${OLLAMA_URL:-http://ollama:11434}
+      - SECRET_KEY=${SECRET_KEY:-development-key}
+    restart: unless-stopped
+
+  # Optional: Ollama for user-hosted AI
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama_data:/root/.ollama
+  #   restart: unless-stopped
+
+volumes:
+  ollama_data:
