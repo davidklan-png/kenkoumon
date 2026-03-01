@@ -2,6 +2,7 @@
   "expo": {
     "name": "Kenkoumon",
     "slug": "kenkoumon",
+    "owner": "dklan",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -36,7 +37,9 @@
         "RECORD_AUDIO",
         "READ_EXTERNAL_STORAGE",
         "READ_MEDIA_IMAGES",
-        "READ_MEDIA_FILES"
+        "READ_MEDIA_FILES",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
       ]
     },
     "web": {
@@ -47,23 +50,26 @@
     "plugins": [
       "expo-av",
       "expo-document-picker",
-      "expo-file-system",
       "expo-secure-store",
-      "expo-image-picker"
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
     },
-    "extra": {
-      "eas": {
-        "projectId": "your-project-id-here"
-      }
-    },
-    "updates": {
-      "url": "https://u.expo.dev/your-project-id"
-    },
     "runtimeVersion": {
       "policy": "appVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ed202531-ee2a-4fcf-a905-930eac93e41f"
+      }
     }
   }
 }
